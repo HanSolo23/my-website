@@ -1,0 +1,6 @@
+*.pyc
+*~
+__pycache__
+websiteForYura
+/static
+.DS_Store

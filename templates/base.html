@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<title>Diamond Whiskey</title>
+</head>
+<body>
+	<header class="header">
+		<div class="container">
+			<div class="header__body">
+				<a href="#" class="header__name">
+					<h1>Diamond Whiskey</h1>
+				</a>
+				<div class="header__burger">
+					<span></span>
+				</div>
+				<nav class="header__menu">
+					<ul class="header__list">
+						<li>
+							<a href="#main" class="header__link">ГЛАВНАЯ</a>
+						</li>
+						<li>
+							<a href="#services" class="header__link">УСЛУГИ</a>
+						</li>
+						<li>
+							<a href="#portfolio" class="header__link">ПОРТФОЛИО</a>
+						</li>
+						<li>
+							<a href="" class="header__link">ОТЗЫВЫ</a>
+						</li>
+						<li>
+							<a href="" class="header__link">КОНТАКТЫ</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+	<main>
+		<div id="main"><img src="{% static 'img/титульная страница.jpg' %}" width="100%"></div>
+		<div class="container">
+			<h2 class="advantages__title">ПРЕИМУЩЕСТВА</h2>
+			<section class="advantages">
+				<div class="margin__top">
+					<div class="advantages__items">
+						<div class="advantages__image">
+							<img src="{% static 'img/layer 1.png' %}" alt="">
+						</div>
+						<div class="advantages__body">
+							<div class="advantages__label"><p>Преимущество №1</p></div>
+							<div class="advantages__text">
+							Особый подход к каждому клиенту. Вы будете приятно удивлены тому, как приятно со мной работать.
+							</div>
+						</div>
+
+					</div>
+					<div class="advantages__items">
+						<div class="advantages__image">
+							<img src="{% static 'img/layer 2.png' %}" alt="">
+						</div>
+						<div class="advantages__body">
+							<div class="advantages__label">Преимущество №2</div>
+							<div class="advantages__text">
+							Качество выполнения работы. Поработав со мной, вы не захотите обращаться к другим специалистам.
+							</div>
+						</div>
+					</div>
+					<div class="advantages__items">
+						<div class="advantages__image">
+							<img src="{% static 'img/layer 3.png' %}" alt="">
+						</div>
+						<div class="advantages__body">
+							<div class="advantages__label">Преимущество №3</div>
+							<div class="advantages__text">
+							Широкий спектр возможностей. Я могу воплотить в жизнь Ваши самые разные задумки.
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="advantages__image__2">
+					<img src="{% static 'img/Слой 2.png' %}" alt="">
+				</div>
+			</section>
+		</div>
+		<div id="services"></div>
+		<h2 class="services__title">НАШИ УСЛУГИ</h2>
+		<div class="container__services">
+			<section class="services">
+				<div class="slider">
+					<div class="slider__item">
+						<img src="{% static 'img/services2.png' %}" alt="">
+						<div class="editing">
+							<div class="videoediting__container">
+								<h2>Видеомонтаж</h2>
+								<p class="videoediting__text">У вас есть видео с Вашего праздника или другого мероприятия? Мы рады смонтировать фильм или небольшой ролик для Вас.</p>
+								<p class="underline">________________________________</p>
+								<p class="videoediting__price">5000 руб/ч</p>
+							</div>
+						</div>	
+					</div>
+					<div class="slider__item">
+						<img src="{% static 'img/services4.png' %}" alt="">
+						<div class="video">
+							<div class="video__container">
+								<h2>Видеосъемка</h2>
+								<p class="video__text">Вам нужно запечатлеть на видео и сохранить на долгие годы свой праздник, мы рады в этом помочь.</p>
+								<p class="underline">________________________________</p>
+								<p class="video__price">2000 руб/ч</p>
+							</div>
+						</div>
+					</div>
+					<div class="slider__item">
+						<img src="{% static 'img/services6.png' %}" alt="">
+						<div class="editing">
+							<div class="videoediting__container">
+								<h3>Видеомонтаж</h3>
+								<p>У вас есть видео с Вашего праздника или другого мероприятия? Мы рады смонтировать фильм или небольшой ролик для Вас.</p>
+								<p>5000 руб/ч</p>
+							</div>
+						</div>
+					</div>
+					<div class="slider__item">
+						<img src="{% static 'img/services6.png' %}" alt="">
+					</div>
+					<div class="slider__item">
+						<img src="{% static 'img/services6.png' %}" alt="">
+					</div>
+				</div>
+			</section>
+		</div>
+
+		{% block portfolio %}
+			portfolio
+		{% endblock %}
+
+	</main>
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script src="{% static 'js/slick.min.js' %}"></script>
+	<script src="{% static 'js/script.js' %}"></script>	
+</body>
+</html>
