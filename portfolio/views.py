@@ -39,6 +39,8 @@ class UploadImage(LoginRequiredMixin, View):
 
 
 class DeleteImage(LoginRequiredMixin, View):
+    raise_exception = True
+
     def get(self, request, slug):
         image = UploadImg.objects.get(slug__iexact=slug)
         return render(request, 'portfolio/delete_image.html', context={'image': image})
