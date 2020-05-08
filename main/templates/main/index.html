@@ -1,0 +1,53 @@
+{% extends 'main/base_main.html' %}
+{% load static %}
+{% block content %}
+	<div>
+		<img src="{% static 'img/титульная страница.jpg' %}" width="100%">
+	</div>
+	<div class="container">
+		<div class="advantages__title">
+			<h2>ПРЕИМУЩЕСТВА</h2>
+			<h1 class="underline">__________</h1>
+		</div>
+		<div class="advantages">
+			<div class="margin__top">
+				<div class="advantages__items">
+					<div class="advantages__image">
+						<img src="{% static 'img/Layer 1.png' %}" alt="">
+					</div>
+					<div class="advantages__body">
+						<div class="advantages__label"><p>Преимущество №1</p></div>
+						<div class="advantages__text">
+							Особый подход к каждому клиенту. Вы будете приятно удивлены тому, как приятно со мной работать.
+						</div>
+					</div>
+				</div>
+				<div class="advantages__items">
+					<div class="advantages__image">
+						<img src="{% static 'img/layer 2.png' %}" alt="">
+					</div>
+					<div class="advantages__body">
+						<div class="advantages__label">Преимущество №2</div>
+						<div class="advantages__text">
+							Качество выполнения работы. Поработав со мной, вы не захотите обращаться к другим специалистам.
+						</div>
+					</div>
+				</div>
+				<div class="advantages__items">
+					<div class="advantages__image">
+						<img src="{% static 'img/Layer 3.png' %}" alt="">
+					</div>
+					<div class="advantages__body">
+						<div class="advantages__label">Преимущество №3</div>
+						<div class="advantages__text">
+							Широкий спектр возможностей. Я могу воплотить в жизнь Ваши самые разные задумки.
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="advantages__image_2">
+				<img src="{% static 'img/Слой 2.png' %}" alt="">
+			</div>
+		</div>
+	</div>
+{% endblock %}

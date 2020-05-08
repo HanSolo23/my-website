@@ -1,0 +1,53 @@
+{% extends 'services/base_services.html' %}
+{% load static %}
+{% block content %}
+	<div class="services__title">
+		<h2 >НАШИ УСЛУГИ</h2>
+		<h1 class="underline">_________</h1>
+	</div>
+	<div class="container__services">
+		<div class="services">
+			<div class="slider">
+				<div class="slider__item">
+					<img src="{% static 'img/services9.png' %}" alt="">
+					<div class="editing">
+						<div class="videoediting__container">
+							<h2>Видеомонтаж</h2>
+							<p class="videoediting__text">У вас есть видео с Вашего праздника или другого мероприятия? Мы рады смонтировать фильм или небольшой ролик для Вас.</p>
+							<p class="underline">________________________________</p>
+							<p class="videoediting__price">5000 руб/ч</p>
+						</div>
+					</div>	
+				</div>
+				<div class="slider__item">
+					<img src="{% static 'img/services8.png' %}" alt="">
+					<div class="video">
+						<div class="video__container">
+							<h2>Видеосъемка</h2>
+							<p class="video__text">Вам нужно запечатлеть на видео и сохранить на долгие годы свой праздник, мы рады в этом помочь.</p>
+							<p class="underline">________________________________</p>
+							<p class="video__price">2000 руб/ч</p>
+						</div>
+					</div>
+				</div>
+				<div class="slider__item">
+					<img src="{% static 'img/services7.png' %}" alt="">
+					<div class="foto">
+						<div class="foto__container">
+							<h2>Фотосъемка</h2>
+							<p class="foto__text">У вас запланировано мероприятие, и вы хотите получить фотоотчет? Тогда мы идем к вам!</p>
+							<p class="underline">________________________________</p>
+							<p class="foto__price">10000 руб/ч</p>
+						</div>
+					</div>
+				</div>
+				<div class="slider__item">
+					<img src="{% static 'img/services6.png' %}" alt="">
+				</div>
+				<div class="slider__item">
+					<img src="{% static 'img/services6.png' %}" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

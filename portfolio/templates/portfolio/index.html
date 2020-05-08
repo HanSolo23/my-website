@@ -1,7 +1,21 @@
-{% extends 'base.html' %}
+{% extends 'portfolio/base_portfolio.html' %}
 {% load static %}
-{% block portfolio %}
-	<div id="portfolio">
-		<img src="{% static 'img/фон для портфолио фотографий.jpg' %}" width="100%">
+{% block content %}
+	<div class="background">
+		<div class="portfolio__title">
+			<h2>ПОРТФОЛИО</h2>
+			<h1 class="underline">________</h1>
+		</div>
+		<div class="container__portfolio">
+			<section class="portfolio">	
+				<div class="second__slider">
+					{% for image in images %}
+					<div class="second__slider__item">
+						<a href="{{ image.get_absolute_url }}"><img src="{{ image.body.url }}" alt="{{ uploadimg.title }}"></a>
+					</div>
+					{% endfor %}
+				</div>
+			</section>
+		</div>
 	</div>
 {% endblock %}
