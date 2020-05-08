@@ -20,3 +20,4 @@ class UploadImgForm(forms.ModelForm):
             raise ValidationError('Title may not be "Upload"')
         if UploadImg.objects.filter(slug__iexact=new_title).count():
             raise ValidationError('Title must be unique. We have "{}" title already'.format(new_title))
+        return new_title
