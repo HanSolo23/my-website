@@ -421,7 +421,7 @@ html, body {
 .container__services {
 	max-width: 1600px;
 	margin: 0px auto;
-	padding: 0px 80px;
+	padding: 0px 80px 40px;
 }
 .services__title {
 	display: flex;
@@ -430,7 +430,7 @@ html, body {
 }
 .services__title h2 {
 	font-family: Gotham Pro, sans-serif;
-	margin-top: 100px;
+	margin-top: 110px;
 	font-size: 18px;
 }
 .services__title .underline {
@@ -588,7 +588,7 @@ html, body {
 }
 .slider .slick-dots li {
 	list-style: none;
-	margin: 40px 20px 0px 0px;
+	margin: 10px 20px 0px 0px;
 }
 .slider .slick-dots button {
 	font-size: 0;
@@ -1036,7 +1036,7 @@ html, body {
 		height: 12px;
 	}
 	.slider .slick-dots li {
-		margin-top: 20px
+		margin-top: 5px
 	}
 }
 
@@ -1398,7 +1398,7 @@ html, body {
 		height: 8px;
 	}
 	.slider .slick-dots li {
-		margin-top: 20px
+		margin-top: 2.5px
 	}
 }
 
@@ -1530,7 +1530,7 @@ html, body {
 		height: 6px;
 	}
 	.slider .slick-dots li {
-		margin: 20px 15px 0px 0px;
+		margin: 2.5px 15px 0px 0px;
 	}
 }
 
@@ -1549,7 +1549,7 @@ html, body {
 		right: 75px;
 	}
 	.slider .slick-dots li {
-		margin: 10px 10px 0px 0px;
+		margin: 2.5px 10px 0px 0px;
 	}
 }
 
@@ -1670,7 +1670,7 @@ html, body {
 .container__portfolio {
 	max-width: 1600px;
 	margin: 0px auto;
-	padding: 0px 80px;
+	padding: 130px 80px;
 }
 .portfolio__title {
 	display: flex;
@@ -1689,6 +1689,11 @@ html, body {
 }
 .portfolio {
 	margin-top: 80px;
+}
+.portfolio__image {
+	padding-top: 220px;
+	padding-left: 700px;
+	padding-bottom: 65px;
 }
 .second__slider__item {
 	position: relative;
@@ -1742,7 +1747,7 @@ html, body {
 }
 .second__slider .slick-dots li {
 	list-style: none;
-	margin: 40px 20px 0px 0px;
+	margin: 10px 20px 0px 0px;
 }
 .second__slider .slick-dots button {
 	font-size: 0;
@@ -1760,19 +1765,23 @@ html, body {
 	opacity: 0.5;
 }
 /*РАЗДЕЛ ЗАГРУЗКА ФОТО В ПОРТФОЛИО*/
+.form__container {
+	max-width: 1100px;
+	width: 100%;
+	margin-bottom: 249px;
+}
 .upload__form {
     display: flex;
     flex-direction: column;
-    margin-top: 300px;
-    margin-left: 700px;
+    padding-top: 200px;
+    padding-left: 700px;
     font-family: Avenir, sans-serif;
-    max-width: 400px;
 }
 .title__style {
-	border:1px solid #ccc; 
-    border-radius:5px;
-    height:50px;
-    width:400px;
+	border: 1px solid #ccc; 
+    border-radius: 5px;
+    height: 50px;
+    width: 100%;
     margin: 40px 40px 40px 0;
 }
 .body__style {
@@ -1865,4 +1874,81 @@ html, body {
 .admin__panel .button__delete button:focus {
 	outline: none;
   	box-shadow: 0 0 0 4px #cbd6ee;
+}
+/*РАЗДЕЛ СТРАНИЦА УДАЛЕНИЯ ФОТО*/
+.delete__form {
+	padding-top: 325px;
+    padding-left: 700px;
+    font-family: Avenir, sans-serif;
+}
+.delete__form .button__cancel button {
+	margin-top: 60px;
+  	border: 0;
+  	border-radius: 5px;
+  	background: #000;
+  	color: #fff;
+  	padding: 8px 16px;
+  	font-size: 16px;
+}
+.delete__form .button__cancel button:hover {
+	opacity: 0.6;
+}
+.delete__form .button__cancel button:focus {
+	outline: none;
+  	box-shadow: 0 0 0 4px #cbd6ee;
+}
+.delete__form button {
+	width: 100px;
+	border: 0;
+  	border-radius: 5px;
+  	background: #ff0000;
+  	color: #fff;
+  	padding: 8px 16px;
+  	font-size: 16px;
+  	margin-left: 10px;
+}
+.delete__form button:hover {
+	opacity: 0.6;
+}
+.delete__form button:focus {
+	outline: none;
+  	box-shadow: 0 0 0 4px #cbd6ee;
+}
+/*РАЗДЕЛ КОНТАКТЫ(ФУТЕР)*/
+.footer {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #f1ead8;
+	
+}
+.footer__body {
+	display:flex;
+	flex-direction: column;
+	padding-top: 20px;
+	font-family: Avenir, sans-serif;
+}
+.social__icons {
+	display:flex;
+	margin-top: 10px;
+}
+.social__icons a:nth-child(2) {
+	margin-left: 30px;
+}
+.social__icons a:nth-child(3) {
+	margin-left: 30px;
+}
+.footer__body .social {
+	margin-top: 30px;
+}
+.footer__body p {
+	padding-top: 10px;
+}
+.footer__body p:nth-child(2) {
+	padding-top: 60px;
+}
+video {
+	margin-top: 100px;
+	outline: none
 }

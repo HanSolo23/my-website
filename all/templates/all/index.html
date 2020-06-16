@@ -107,21 +107,11 @@
 		<div class="container__portfolio">
 			<section class="portfolio">
 				<div class="second__slider">
+					{% for image in images %}
 					<div class="second__slider__item">
-						<img src="{% static 'img/services9.png' %}" alt="">
+						<a href="{{ image.get_absolute_url }}"><img src="{{ image.body.url }}" alt="{{ uploadimg.title }}"></a>
 					</div>
-					<div class="second__slider__item">
-						<img src="{% static 'img/services8.png' %}" alt="">
-					</div>
-					<div class="second__slider__item">
-						<img src="{% static 'img/services7.png' %}" alt="">
-					</div>
-					<div class="second__slider__item">
-						<img src="{% static 'img/services6.png' %}" alt="">
-					</div>
-					<div class="second__slider__item">
-						<img src="{% static 'img/services6.png' %}" alt="">
-					</div>
+					{% endfor %}
 				</div>
 			</section>
 		</div>

@@ -47,10 +47,28 @@
 		{% if request.user.is_authenticated and request.user.is_staff %}
 			<div class="admin__panel">
 				<a href="/admin" class="button__admin"><button>Admin</button></a>
-				<a href="{% url 'upload_image_url' %}" class="button__upload" style="{% if detail %}display:block{% endif %}"><button>Upload</button></a>
+				<a href="{% url 'upload_image_url' %}" class="button__upload" style="{% if img %}display:block{% endif %}"><button>Upload</button></a>
+				<a href="{% url 'upload_video_url' %}" class="button__upload" style="{% if vdo %}display:block{% endif %}"><button>Upload</button></a>
 				<a href="{{ admin_object.get_delete_url }}" class="button__delete" style="{% if delete %}display:block{% endif %}"><button>Delete</button></a>
 			</div>
 		{% endif %}
+		<footer class="footer">
+			<div class="container">
+				<div class="footer__body">
+					<h2>Контакты:</h2>
+					<p>vanshrespect@mail.ru</p>
+					<p>+79189953630</p>
+					<div class="social">
+						<h3>Меня можно найти в:</h3>
+						<div class="social__icons">
+							<a href=""><img src="{% static 'img/social-007-round_skype.png' %}" alt=""></a>
+							<a href=""><img src="{% static 'img/social-023-round_whatsapp.png' %}" alt=""></a>
+							<a href=""><img src="{% static 'img/social-038-round_instagram.png' %}" alt=""></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
 	</main>
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

@@ -1,5 +1,7 @@
 {% extends 'portfolio/base_portfolio.html' %}
 {% load static %}
 {% block content %}
-	<img src="{{ image.body.url }}" alt="{{ uploadimg.title }}" >
+	<div class="portfolio__image">
+		<img src="{{ image.body.url }}" alt="{{ uploadimg.title }}" >
+	</div>
 {% endblock %}

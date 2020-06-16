@@ -1,0 +1,7 @@
+{% extends 'portfolio/base_portfolio.html' %}
+{% load static %}
+{% block content %}
+	{% for video in videos %}
+		<a href="{{ video.get_absolute_url }}"><video src="{{ video.body.url }}" controls="controls" width="800" height="500"></video></a>
+	{% endfor %}
+{% endblock %}

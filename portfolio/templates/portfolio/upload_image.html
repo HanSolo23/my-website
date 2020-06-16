@@ -1,20 +1,21 @@
 {% extends 'portfolio/base_portfolio.html' %}
 {% load static %}
 {% block content %}
-	<form action="{% url 'upload_image_url' %}" method="post" enctype="multipart/form-data" autocomplete="off" class="upload__form">
-		{% csrf_token %}
-		{% for field in form %}
-		<div class="">
-			{% if field.errors %}
-			<div>
-				{{ field.errors}}
+	<div class="form__container">
+		<form action="{% url 'upload_image_url' %}" method="post" enctype="multipart/form-data" autocomplete="off" class="upload__form">
+			{% csrf_token %}
+			{% for field in form %}
+			<div class="">
+				{{ field.label }}
+				{% if field.errors %}
+				<div>
+					{{ field.errors}}
+				</div>
+				{% endif %}
+				{{ field }}
 			</div>
-			{% endif %}
-
-			{{ field.label }}
-			{{ field }}
-		</div>
-		{% endfor %}
-		<button type="submit">Upload Image</button>
-	</form>
+			{% endfor %}
+			<button type="submit">Upload Image</button>
+		</form>
+	</div>
 {% endblock %}
