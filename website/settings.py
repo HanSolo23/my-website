@@ -25,7 +25,8 @@ SECRET_KEY = '45s+++$k41)=!x=(f7jx1f+t93$#le$2wej8rhm!_qcuov8-oq'
 DEBUG = True
 
 ALLOWED_HOSTS = ['hansolo93.pythonanywhere.com',
-                 'localhost'
+                 'localhost',
+                 '127.0.0.1'
                  ]
 
 # Application definition
@@ -37,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'all',
     'main',
     'services',
     'portfolio',

@@ -1,53 +1,49 @@
 {% extends 'main/base_main.html' %}
 {% load static %}
 {% block content %}
-	<div>
-		<img src="{% static 'img/титульная страница.jpg' %}" width="100%">
-	</div>
-	<div class="container">
-		<div class="advantages__title">
-			<h2>ПРЕИМУЩЕСТВА</h2>
-			<h1 class="underline">__________</h1>
-		</div>
-		<div class="advantages">
-			<div class="margin__top">
-				<div class="advantages__items">
-					<div class="advantages__image">
-						<img src="{% static 'img/Layer 1.png' %}" alt="">
-					</div>
-					<div class="advantages__body">
-						<div class="advantages__label"><p>Преимущество №1</p></div>
-						<div class="advantages__text">
-							Особый подход к каждому клиенту. Вы будете приятно удивлены тому, как приятно со мной работать.
-						</div>
-					</div>
-				</div>
-				<div class="advantages__items">
-					<div class="advantages__image">
-						<img src="{% static 'img/layer 2.png' %}" alt="">
-					</div>
-					<div class="advantages__body">
-						<div class="advantages__label">Преимущество №2</div>
-						<div class="advantages__text">
-							Качество выполнения работы. Поработав со мной, вы не захотите обращаться к другим специалистам.
-						</div>
-					</div>
-				</div>
-				<div class="advantages__items">
-					<div class="advantages__image">
-						<img src="{% static 'img/Layer 3.png' %}" alt="">
-					</div>
-					<div class="advantages__body">
-						<div class="advantages__label">Преимущество №3</div>
-						<div class="advantages__text">
-							Широкий спектр возможностей. Я могу воплотить в жизнь Ваши самые разные задумки.
-						</div>
-					</div>
-				</div>
+<div class="container_2">
+	<div class="main__page">
+		<div class="last__life">
+			<div class="text_1">
+				<h2>Как же я решил стать программистом? Ответ здесь!</h2>
 			</div>
-			<div class="advantages__image_2">
-				<img src="{% static 'img/Слой 2.png' %}" alt="">
+			<div class="story_1">
+				<p class="story_1_1">В 2013 году я закончил РГУ нефти и газа им. Губкина.</p>
+				<p class="story_1_2">Моя специальность - инженер-проектировщик.</p>
+				<p class="story_1_3">Одно время я работал в АО "Черномортранснефть" инженером службы промышленной безопасности.</p>
+				<p class="story_1_4">После, в ООО "Лотис", компании, которая занималась зачисткой резервуаров на нефтебазах.</p>
+				<p class="story_1_5">Я занимал должность бригадира. Руководил бригадой механиков.</p>
+				<p class="story_1_6">В январе 2020 года эта компания прекратила свою деятельность, но уже тогда я знал, что эта профессия не приносит мне удовлетворения.</p>
+				<p class="story_1_7">Я понял, что у меня есть шанс заняться чем-то новым и более интересным.</p>
+				<p class="story_1_8">Мне всегда была близка тема IT, компьютерных технологий, поэтому я решил попробовать стать программистом.</p>
+			</div>
+			<img src="{% static 'img/oil3.jpg' %}">
+		</div>
+		<div class="new__life">
+			<div class="new__life_1">
+				<div class="text_2">
+					<h4>Без кого бы я не справился? Ответ здесь!</h4>
+				</div>
+				<div class="story_2">
+					<p class="story_2_1">Конечно же без своей семьи и друзей.</p>
+					<p class="story_2_2">Моя супруга и родители без вопросов поддержали меня в моем начинании.</p>
+					<p class="story_2_3">Мой брат - программист, рассказал мне с чего начинать.</p>
+					<p class="story_2_4">А друзья были рады, что я наконец-то сменю свою опасную профессию на ту, что будет приносить радость и удовлетворение.</p>
+				</div>
+				<img src="{% static 'img/code.jpg' %}" >
+			</div>
+			<div class="new__life_2">
+				<div class="text_3">
+					<h4>Что же вы узнаете на этом сайте? Ответ здесь!</h4>
+				</div>
+				<div class="story_3">
+					<p class="story_3_1">Этот сайт проиллюстрирует то, чему я уже научился.</p>
+					<p class="story_3_2">Покажет мое стремление к изучению нового.</p>
+					<p class="story_3_3">А также немного расскажет обо мне.</p>
+				</div>
+				<img src="{% static 'img/code2.jpg' %}" >
 			</div>
 		</div>
 	</div>
+</div>
 {% endblock %}

@@ -8,9 +8,9 @@
 		</div>
 		<div class="container__portfolio">
 			<section class="portfolio">	
-				<div class="second__slider">
+				<div class="slider">
 					{% for image in images %}
-					<div class="second__slider__item">
+					<div class="slider__item">
 						<a href="{{ image.get_absolute_url }}"><img src="{{ image.body.url }}" alt="{{ uploadimg.title }}"></a>
 					</div>
 					{% endfor %}

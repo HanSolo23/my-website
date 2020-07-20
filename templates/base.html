@@ -4,72 +4,68 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="{% static 'css/style.css' %}">
-	<title>Diamond Whiskey</title>
+	<title>IVAN TARAN</title>
 </head>
 <body>
-	<header class="header">
-		<div class="container">
-			<div class="header__body">
-				<a href="{% url 'website' %}" class="header__name">
-					<h1>Diamond Whiskey</h1>
-				</a>
-				<div class="header__burger">
-					<span></span>
-				</div>
-				<nav class="header__menu">
-					<ul class="header__list">
-						<li>
-							<a href="{% url 'main' %}" class="header__link">ГЛАВНАЯ</a>
-						</li>
-						<li>
-							<a href="{% url 'services' %}" class="header__link">УСЛУГИ</a>
-						</li>
-						<li>
-							<a href="{% url 'portfolio_url' %}" class="header__link">ПОРТФОЛИО</a>
-						</li>
-						<li>
-							<a href="" class="header__link">ОТЗЫВЫ</a>
-						</li>
-						<li>
-							<a href="" class="header__link">КОНТАКТЫ</a>
-						</li>
-					</ul>
-				</nav>
-			</div>
-		</div>
-	</header>
-	<main>
-		<div>
-			{% block content %}
-			{% endblock %}
-		</div>
-		{% if request.user.is_authenticated and request.user.is_staff %}
-			<div class="admin__panel">
-				<a href="/admin" class="button__admin"><button>Admin</button></a>
-				<a href="{% url 'upload_image_url' %}" class="button__upload" style="{% if img %}display:block{% endif %}"><button>Upload</button></a>
-				<a href="{% url 'upload_video_url' %}" class="button__upload" style="{% if vdo %}display:block{% endif %}"><button>Upload</button></a>
-				<a href="{{ admin_object.get_delete_url }}" class="button__delete" style="{% if delete %}display:block{% endif %}"><button>Delete</button></a>
-			</div>
-		{% endif %}
-		<footer class="footer">
-			<div class="container">
-				<div class="footer__body">
-					<h2>Контакты:</h2>
-					<p>vanshrespect@mail.ru</p>
-					<p>+79189953630</p>
-					<div class="social">
-						<h3>Меня можно найти в:</h3>
-						<div class="social__icons">
-							<a href=""><img src="{% static 'img/social-007-round_skype.png' %}" alt=""></a>
-							<a href=""><img src="{% static 'img/social-023-round_whatsapp.png' %}" alt=""></a>
-							<a href=""><img src="{% static 'img/social-038-round_instagram.png' %}" alt=""></a>
+	<div class="wrapper">
+		<div class="content">
+			<header class="header">
+				<div class="container">
+					<div class="header__body">
+						<a href="{% url 'main' %}" class="header__name">
+							<h1 class="title_1">IVAN TARAN</h1>
+						</a>
+						<div class="header__burger">
+							<span></span>
 						</div>
+						<nav class="header__menu">
+							<ul class="header__list">
+								<li class="header__link">
+									<a href="{% url 'main' %}">ГЛАВНАЯ</a>
+								</li>
+								<li class="header__link">
+									<a href="{% url 'portfolio_url' %}">ФОТОКАРТОЧКИ</a>
+								</li>
+								<li class="header__link">
+									<a href="{% url 'portfolio_video_url' %}">ВИДЕОКАРТОЧКИ</a>
+								</li>
+								<li class="header__link">
+									<a href="">БЛОГ</a>
+								</li>
+							</ul>
+						</nav>
 					</div>
 				</div>
+			</header>
+			<main>
+				{% block content %}
+				{% endblock %}
+				{% if request.user.is_authenticated and request.user.is_staff %}
+				<div class="admin__panel">
+					<a href="/admin" class="button__admin"><button>Admin</button></a>
+					<a href="{% url 'upload_image_url' %}" class="button__upload" style="{% if img %}display:block{% endif %}"><button>Upload</button></a>
+					<a href="{% url 'upload_video_url' %}" class="button__upload" style="{% if vdo %}display:block{% endif %}"><button>Upload</button></a>
+					<a href="{{ admin_object.get_delete_url }}" class="button__delete" style="{% if delete %}display:block{% endif %}"><button>Delete</button></a>
+				</div>
+				{% endif %}
+			</main>
+		</div>
+		<footer class="footer">
+			<div class="container">
+				<a href="" class="footer__link">
+					<img src="{% static 'img/icon6.png' %}" alt="">
+				</a>
+				<a href="" class="footer__link">
+					<img src="{% static 'img/icon7.png' %}" alt="">
+				</a>
+				<a href="" class="footer__link">
+					<img src="{% static 'img/icon8.png' %}" alt="">
+				</a>
 			</div>
 		</footer>
-	</main>
+	</div>
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script src="{% static 'js/slick.min.js' %}"></script>
