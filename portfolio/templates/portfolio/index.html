@@ -1,21 +1,17 @@
 {% extends 'portfolio/base_portfolio.html' %}
 {% load static %}
 {% block content %}
-	<div class="background">
-		<div class="portfolio__title">
-			<h2>ПОРТФОЛИО</h2>
-			<h1 class="underline">________</h1>
-		</div>
-		<div class="container__portfolio">
-			<section class="portfolio">	
-				<div class="slider">
-					{% for image in images %}
-					<div class="slider__item">
-						<a href="{{ image.get_absolute_url }}"><img src="{{ image.body.url }}" alt="{{ uploadimg.title }}"></a>
-					</div>
-					{% endfor %}
+<body class="body__portfolio">
+	<div class="container__portfolio">
+		<div class="portfolio">	
+			<div class="slider">
+				{% for image in images %}
+				<div class="slider__item">
+					<a href="{{ image.get_absolute_url }}"><img src="{{ image.body.url }}" alt="{{ uploadimg.title }}"></a>
 				</div>
-			</section>
+				{% endfor %}
+			</div>
 		</div>
 	</div>
+</body>
 {% endblock %}

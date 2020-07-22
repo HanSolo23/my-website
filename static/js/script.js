@@ -7,8 +7,8 @@ $(document).ready(function() {
 		arrows:true,
 		dots:true,
 		adaptiveHeight:true,
-		slidesToShow:3,
-		slidesToScroll:1,
+		slidesToShow:2,
+		slidesToScroll:2,
 		speed:500,
 		easing:'ease',
 		draggable:false,
@@ -28,4 +28,8 @@ $(document).ready(function() {
 			}
 		]
 	});
+	$('body').css('opacity', '1');
+	if(window.location.href.indexOf('portfolio') > -1) {
+		$('.header__name,.link').addClass('color');
+	};
 });

@@ -3,6 +3,8 @@ html, body {
 }
 body {
 	background: white center / cover no-repeat;
+	opacity: 0;
+	transition: 1s
 }
 *,*:before,*:after {
 	padding: 0;
@@ -27,7 +29,7 @@ body {
 .header {/*шапка будет зафиксирована*/
 	position: fixed;
 	width: 100%;
-	top: 15px;
+	top: 10px;
 	left: 0;
 	z-index: 50;
 }
@@ -57,6 +59,9 @@ body {
 	transform: scale(0.999);
 	transition: all 1s ease
 }
+.header__name.color {
+	color: white;
+}
 .header__name h1{
 	font-family: 'Montserrat', sans-serif;
 }
@@ -81,12 +86,15 @@ body {
 	transform: scale(1) translateZ(0);  
 	transition: all 1s ease
 }
-.header__link a {
+.link {
 	color: #282826;
 	font-size: 18px;
 	text-decoration: none;
 	outline: none;
 	font-family: 'Montserrat', sans-serif;
+}
+.link.color {
+	color: white;
 }
 .header__link:hover {
 	transform: scale(1.05);
@@ -236,12 +244,16 @@ body {
 /*РАЗДЕЛ ГЛАВНАЯ СТРАНИЦА*/
 .container_2 {
 	width: 1700px;
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
 }
 .main__page {
 	display: flex;
 	position: relative;
-	top: 115px;
-	left: 80px;
+	
 }
 .last__life {
 	position: relative;
@@ -504,31 +516,20 @@ body {
 }
 
 /*РАЗДЕЛ ПОРТФОЛИО*/
-.background {
-	background: white center / cover no-repeat;
+.body__portfolio {
+	background: black center / cover no-repeat;
 }
 .container__portfolio {
-	max-width: 1600px;
-	margin: 0px auto;
-	padding: 130px 80px;
-}
-.portfolio__title {
-	display: flex;
-	flex-direction: column;
-	align-items: center
-}
-.portfolio__title h2 {
-	font-family: Avenir, sans-serif;
-	margin-top: 100px;
-	color: #fff;
-	font-size: 18px;
-}
-.portfolio__title .underline {
-	color: #fff;
-	margin-top: -20px;
+	max-width: 1300px;
+	padding: 0px 80px;
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
 }
 .portfolio {
-	margin-top: 80px;
+
 }
 .portfolio__image {
 	padding-top: 220px;
@@ -559,7 +560,7 @@ body {
 .slider .slick-arrow {
 	position: absolute;
 	top: 50%;
-	margin: -100px 0px 0px 0px;
+	margin: -80px 0px 0px 0px;
 	z-index: 10;
 	font-size: 0;
 	width: 70px;
@@ -568,17 +569,21 @@ body {
 }
 .slider .slick-arrow.slick-prev {
 	left: 0;
-	background: url('img/left_icon.svg') 0 0 / 100% no-repeat;
+	background: url('img/left3.png') 0 0 / 100% no-repeat;
+	transition: all 1s ease;
 }
 .slider .slick-arrow.slick-next {
 	right: 15px;
-	background: url('img/right_icon.svg') 0 0 / 100% no-repeat;
+	background: url('img/right4.png') 0 0 / 100% no-repeat;
+	transition: all 1s ease;
 }
 .slider .slick-arrow.slick-prev:hover {
-	opacity: 0.5;
+	transform: scale(1.5);
+	transition: all 1s ease;
 }
 .slider .slick-arrow.slick-next:hover {
-	opacity: 0.5;
+	transform: scale(1.5);
+	transition: all 1s ease;
 }
 .slider .slick-dots {
 	display: flex;
@@ -587,19 +592,19 @@ body {
 }
 .slider .slick-dots li {
 	list-style: none;
-	margin: 10px 20px 0px 0px;
+	margin: 40px 20px 0px 0px;
 }
 .slider .slick-dots button {
 	font-size: 0;
 	width: 15px;
 	height: 15px;
-	background-color: #282826;
+	background-color: white;
 	border-radius: 50%;
 	outline: none;
 }
 .slider .slick-dots li.slick-active button {
 	background-color: transparent;
-	border: 1px solid #bd9a3b;
+	border: 1px solid white;
 }
 .slider .slick-dots button:hover {
 	opacity: 0.5;
@@ -757,11 +762,12 @@ body {
 /*РАЗДЕЛ КОНТАКТЫ(ФУТЕР)*/
 .footer {
 	flex: 0 0 auto;
-	z-index: 100;
+	
 }
 .footer img {
-	padding: 15px;
+	padding: 0px 15px 25px 0px;
 	transition: all 1s ease;
+	
 }
 .footer a {
 	text-decoration: none;
