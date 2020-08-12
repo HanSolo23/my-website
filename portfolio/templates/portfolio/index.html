@@ -1,8 +1,9 @@
 {% extends 'portfolio/base_portfolio.html' %}
 {% load static %}
 {% block content %}
-<body class="body__portfolio">
+<div class="body__portfolio">
 	<div class="container__portfolio">
+		<div class="background"></div>
 		<div class="portfolio">	
 			<div class="slider">
 				{% for image in images %}
@@ -12,6 +13,12 @@
 				{% endfor %}
 			</div>
 		</div>
+		<div class="arrows">
+			<a href="#" class="prev"></a>
+			<a href="#" class="up disable"></a>
+			<a href="#" class="next"></a>
+			<a href="#" class="down"></a>
+		</div>
 	</div>
-</body>
+</div>
 {% endblock %}
