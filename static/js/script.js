@@ -18,6 +18,16 @@ var links = body.querySelectorAll('.link');
 var footer = body.querySelector('.footer');
 var back = footer.querySelector('.back');
 var footerLinks = footer.querySelectorAll('.footer__link');
+var items = document.querySelectorAll('.slider__item');
+
+var imageLinks = function(item) {
+	var elements = [];
+	for (var i = 0; i < item.length; i++) {
+		var element = item[i].querySelector('a');
+		elements.push(element);
+	}
+	return elements;
+};
 
 body.style.opacity = '1';
 if (window.location.href.indexOf('portfolio') > -1) {
@@ -32,6 +42,9 @@ if (window.location.href.indexOf('portfolio') > -1) {
 	body.style.background = 'black center / cover no-repeat';
 };
 
+var allImageLinks = imageLinks(items);
+
+
 // Portfolio slider
 
 var mainSlider = document.querySelector('.slider');
@@ -40,7 +53,7 @@ var arrows = document.querySelector('.arrows');
 var previous = arrows.querySelector('.prev');
 var next = arrows.querySelector('.next');
 var container = document.querySelector('.portfolio');
-
+console.log(sliderItems)
 var constant = 3;
 var itemWidth = container.clientWidth;
 var movePosition = Math.round(itemWidth / constant);

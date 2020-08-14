@@ -11,9 +11,12 @@ def portfolio_foto_slider(request):
     return render(request, 'portfolio/index.html', context={'images': images, 'img': True})
 
 
-def portfolio_foto_detail(request, slug):
-    image = get_object_or_404(UploadImg, slug__iexact=slug)
-    return render(request, 'portfolio/image.html', context={'image': image, 'admin_object': image, 'delete': True})
+class PortfolioFotoDetail(LoginRequiredMixin, View):
+    raise_exception = True
+
+    def get(self, request, slug):
+        image = get_object_or_404(UploadImg, slug__iexact=slug)
+        return render(request, 'portfolio/image.html', context={'image': image, 'admin_object': image, 'delete': True})
 
 
 def portfolio_video(request):
@@ -21,9 +24,12 @@ def portfolio_video(request):
     return render(request, 'portfolio/index_video.html', context={'videos': videos, 'vdo': True})
 
 
-def portfolio_video_detail(request, slug):
-    video = get_object_or_404(UploadVideo, slug__iexact=slug)
-    return render(request, 'portfolio/video.html', context={'video': video, 'admin_object': video, 'delete': True})
+class PortfolioVideoDetail(LoginRequiredMixin, View):
+    raise_exception = True
+
+    def get(self, request, slug):
+        video = get_object_or_404(UploadVideo, slug__iexact=slug)
+        return render(request, 'portfolio/video.html', context={'video': video, 'admin_object': video, 'delete': True})
 
 
 class UploadImage(LoginRequiredMixin, View):

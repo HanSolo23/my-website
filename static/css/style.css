@@ -577,9 +577,15 @@ body {
 	cursor: none;
 }
 .portfolio__image {
-	padding-top: 220px;
-	padding-left: 700px;
-	padding-bottom: 65px;
+	position: absolute;
+	top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+.portfolio__image img {
+	max-width: 100%;
+	max-height: 600px;
 }
 /*
 .slider__item {
