@@ -1,8 +1,13 @@
-$(document).ready(function() {
-	$('.header__burger').click(function(event) {
-		$('.header__burger,.header__menu').toggleClass('active');
-		$('body').toggleClass('lock');
-	});
+// Burger menu settings
+
+var headerBurger = document.querySelector('.header__burger');
+var headerMenu = document.querySelector('.header__menu');
+var body = document.querySelector('body');
+
+headerBurger.addEventListener('click', function() {
+	headerBurger.classList.toggle('active');
+	headerMenu.classList.toggle('active');
+	body.classList.toggle('lock');
 });
 
 // Main settings
@@ -34,12 +39,11 @@ var sliderItems = mainSlider.children;
 var arrows = document.querySelector('.arrows');
 var previous = arrows.querySelector('.prev');
 var next = arrows.querySelector('.next');
-var images = mainSlider.querySelectorAll('img');
 var container = document.querySelector('.portfolio');
 
-var slidesToScroll = 3;
-var itemWidth = Math.round(container.clientWidth);
-var movePosition = itemWidth / slidesToScroll;
+var constant = 3;
+var itemWidth = container.clientWidth;
+var movePosition = Math.round(itemWidth / constant);
 
 var allImages = function(item) {
 	var elements = [];
@@ -55,21 +59,15 @@ items.forEach((item) => {
 	item.style.maxWidth = `${itemWidth}px`;
 });
 
-var settings = {
-	width: 300,
-	height: 500,
-	margin: 20
-};
-
 var row = 0;
 next.addEventListener('click', function(evt) {
 	evt.preventDefault;
 	row -= movePosition;
 	mainSlider.style.transform = `translateX(${row}px)`;
-	if (-row === (sliderItems.length - 2) * (settings.width + settings.margin)) {
+	if (-row === (allImages(sliderItems).length - 5) * movePosition) {
 		next.classList.add('disable');
 	};
-	if (row !== settings.width + settings.margin) {
+	if (row !== movePosition) {
 		previous.classList.remove('disable');
 	};
 });
@@ -79,10 +77,10 @@ previous.addEventListener('click', function(evt) {
 	evt.preventDefault;
 	row += movePosition;
 	mainSlider.style.transform = `translateX(${row}px)`;
-	if (row === settings.width + settings.margin) {
+	if (row === movePosition) {
 		previous.classList.add('disable');
 	};
-	if (-row !== ((sliderItems.length - 2) * (settings.width + settings.margin))) {
+	if (-row !== (allImages(sliderItems).length - 5) * movePosition) {
 		next.classList.remove('disable');
 	};
 });

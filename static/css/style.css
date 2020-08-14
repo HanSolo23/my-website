@@ -538,7 +538,7 @@ body {
 .slider__item {
 	outline: none;
 	margin: 0px 20px 0px 0px;
-	transition: all 0.3s ease 0s;
+	transition: all 1s ease 0s;
 	text-align: center;
 }
 
@@ -547,22 +547,30 @@ body {
 	height: 500px;
 }
 .arrows {
-	position: absolute;
-	top: -20%;
-    left: 45%;
-    
+	
 }
 .arrows .prev {
 	position: absolute;
-	background: url('img/left_icon.svg') 0 0 / 100% no-repeat;
+	background: url('img/back.png') 0 0 / 100% no-repeat;
 	padding: 50px 50px 50px 50px;
-	left: 0px;
+	transform: scale(1);
+	transition: all 1s ease 0s;
 }
 .arrows .next {
 	position: absolute;
-	background: url('img/right_icon.svg') 0 0 / 100% no-repeat;
+	background: url('img/forward.png') 0 0 / 100% no-repeat;
 	padding: 50px 50px 50px 50px;
-	left: 150px;
+	left: 1200px;
+	transform: scale(1);
+	transition: all 1s ease 0s;
+}
+.arrows .prev:hover {
+	transform: scale(0.95);
+	transition: all 1s ease 0s;
+}
+.arrows .next:hover {
+	transform: scale(0.95);
+	transition: all 1s ease 0s;
 }
 .disable {
 	pointer-events: none;
