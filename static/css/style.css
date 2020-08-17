@@ -673,7 +673,7 @@ body {
     flex-direction: column;
     padding-top: 200px;
     padding-left: 700px;
-    font-family: Avenir, sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 .title__style {
 	border: 1px solid #ccc; 
@@ -693,9 +693,17 @@ body {
   	color: #fff;
   	padding: 8px 16px;
   	font-size: 16px;
+	transform: scale(1);
+  	transition: all 1s ease 0s;
+}
+.error {
+	margin-top: 20px;
+	list-style: none;
+	color: red;
 }	
 .upload__form button:hover {
-	opacity: 0.8;
+	transform: scale(1.05);
+	transition: all 1s ease 0s;
 }
 .upload__form button:focus {
 	outline: none;
@@ -829,7 +837,7 @@ body {
 	transform: translateY(-5px);
 	transition: all 1s ease;
 }
-.back {
+.back__first {
 	position: absolute;
 	bottom: 61px;
 	display: none;
@@ -841,11 +849,39 @@ body {
 	transition: all 1s ease;
 	z-index: 3;
 }
-.back:hover {
+.back__first:hover {
 	transform: scale(1.05);
 }
-
-
+.back__second {
+	position: absolute;
+	bottom: 61px;
+	display: none;
+	text-decoration: none;
+	outline: none;
+	color: white;
+	font-family: 'Montserrat', sans-serif;
+	transform: scale(1);
+	transition: all 1s ease;
+	z-index: 3;
+}
+.back__second:hover {
+	transform: scale(1.05);
+}
+.back__third {
+	position: absolute;
+	bottom: 61px;
+	display: none;
+	text-decoration: none;
+	outline: none;
+	color: white;
+	font-family: 'Montserrat', sans-serif;
+	transform: scale(1);
+	transition: all 1s ease;
+	z-index: 3;
+}
+.back__third:hover {
+	transform: scale(1.05);
+}
 
 
 

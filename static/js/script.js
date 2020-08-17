@@ -16,18 +16,10 @@ var body = document.querySelector('body');
 var headerName = body.querySelector('.header__name');
 var links = body.querySelectorAll('.link');
 var footer = body.querySelector('.footer');
-var back = footer.querySelector('.back');
+var backFirst = footer.querySelector('.back__first');
+var backSecond = footer.querySelector('.back__second');
+var backThird = footer.querySelector('.back__third');
 var footerLinks = footer.querySelectorAll('.footer__link');
-var items = document.querySelectorAll('.slider__item');
-
-var imageLinks = function(item) {
-	var elements = [];
-	for (var i = 0; i < item.length; i++) {
-		var element = item[i].querySelector('a');
-		elements.push(element);
-	}
-	return elements;
-};
 
 body.style.opacity = '1';
 if (window.location.href.indexOf('portfolio') > -1) {
@@ -35,16 +27,45 @@ if (window.location.href.indexOf('portfolio') > -1) {
 	links.forEach((link) => {
 		link.classList.add('color');
 	});
-	back.style.display = 'block';
+	backFirst.style.display = 'block';
 	footerLinks.forEach((footerLink) => {
 		footerLink.style.display = 'none';
 	});
 	body.style.background = 'black center / cover no-repeat';
 };
 
-var allImageLinks = imageLinks(items);
+var url = window.location.href;
 
+if (!url.endsWith('portfolio/')) {
+	backFirst.style.display = 'none';
+	backSecond.style.display = 'block';
+};
 
+if (window.location.href.indexOf('upload') > -1) {
+	body.style.background = 'white center / cover no-repeat';
+	backSecond.style.color = 'black';
+};
+
+if (window.location.href.indexOf('delete') > -1) {
+	body.style.background = 'white center / cover no-repeat';
+	backSecond.style.display = 'none';
+};
+
+/*if (!url.endsWith('video/') && !url.endsWith('portfolio/')) {
+	backFirst.style.display = 'none';
+	backThird.style.display = 'block';
+};*/
+
+if (window.location.href.indexOf('video') > -1) {
+	backSecond.style.display = 'none';
+	backFirst.style.display = 'block';
+};
+
+if (window.location.href.indexOf('video/upload') > -1) {
+	backFirst.style.display = 'none';
+	backThird.style.display = 'block';
+	backThird.style.color = 'black';
+};
 // Portfolio slider
 
 var mainSlider = document.querySelector('.slider');
@@ -53,7 +74,6 @@ var arrows = document.querySelector('.arrows');
 var previous = arrows.querySelector('.prev');
 var next = arrows.querySelector('.next');
 var container = document.querySelector('.portfolio');
-console.log(sliderItems)
 var constant = 3;
 var itemWidth = container.clientWidth;
 var movePosition = Math.round(itemWidth / constant);

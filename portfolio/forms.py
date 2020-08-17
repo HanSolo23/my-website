@@ -18,8 +18,8 @@ class UploadImgForm(forms.ModelForm):
 
         if new_title == 'upload' or new_title == 'video' or new_title == 'Upload' or new_title == 'Video':
             raise ValidationError('Title may not be "Upload" or "Video".')
-        if UploadImg.objects.filter(slug__iexact=new_title).count():
-            raise ValidationError('Title must be unique.')
+        if UploadImg.objects.filter(title__iexact=new_title).count():
+            raise ValidationError('Title must be unique. We have "{}" title already'.format(new_title))
         return new_title
 
 
@@ -38,6 +38,6 @@ class UploadVideoForm(forms.ModelForm):
 
         if new_title == 'upload' or new_title == 'video' or new_title == 'Upload' or new_title == 'Video':
             raise ValidationError('Title may not be "Upload" or "Video".')
-        if UploadVideo.objects.filter(slug__iexact=new_title).count():
-            raise ValidationError('Title must be unique.')
+        if UploadVideo.objects.filter(title__iexact=new_title).count():
+            raise ValidationError('Title must be unique. We have "{}" title already'.format(new_title))
         return new_title

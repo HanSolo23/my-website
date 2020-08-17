@@ -8,9 +8,9 @@
 			<div class="">
 				{{ field.label }}
 				{% if field.errors %}
-				<div>
-					{{ field.errors}}
-				</div>
+					<div class="error">
+						{{ field.errors}}
+					</div>
 				{% endif %}
 				{{ field }}
 			</div>
