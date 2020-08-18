@@ -1,5 +1,7 @@
 {% extends 'portfolio/base_portfolio.html' %}
 {% load static %}
 {% block content %}
-	<video src="{{ video.body.url }}" controls="controls" width="500" height="200"></video>
+	<div class="portfolio__video">
+		<video src="{{ video.body.url }}" controls="controls" width="800" height="500"></video>
+	</div>
 {% endblock %}

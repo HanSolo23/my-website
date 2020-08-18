@@ -546,9 +546,6 @@ body {
 	max-width: 100%;
 	height: 500px;
 }
-.arrows {
-	
-}
 .arrows .prev {
 	position: absolute;
 	background: url('img/back.png') 0 0 / 100% no-repeat;
@@ -587,81 +584,7 @@ body {
 	max-width: 100%;
 	max-height: 600px;
 }
-/*
-.slider__item {
-	position: relative;
-	outline: none;
-	margin: 0px 20px 0px 0px;
-	transition: all 0.3s ease 0s;
-	text-align: center;
-}
-.slider__item img {
-	max-width: 100%;
-	max-height: 600px;
-}
-.slider .slick-list {
-	overflow: hidden;
-}
-.slider .slick-track {
-	display: flex;
-	align-items: flex-start;
-}
-.slider {
-	position: relative;
-	padding: 0px 100px;
-}
-.slider .slick-arrow {
-	position: absolute;
-	top: 50%;
-	margin: -80px 0px 0px 0px;
-	z-index: 10;
-	font-size: 0;
-	width: 70px;
-	height: 70px;
-	outline: none;
-}
-.slider .slick-arrow.slick-prev {
-	left: 0;
-	background: url('img/left3.png') 0 0 / 100% no-repeat;
-	transition: all 1s ease;
-}
-.slider .slick-arrow.slick-next {
-	right: 15px;
-	background: url('img/right4.png') 0 0 / 100% no-repeat;
-	transition: all 1s ease;
-}
-.slider .slick-arrow.slick-prev:hover {
-	transform: scale(1.5);
-	transition: all 1s ease;
-}
-.slider .slick-arrow.slick-next:hover {
-	transform: scale(1.5);
-	transition: all 1s ease;
-}
-.slider .slick-dots {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-.slider .slick-dots li {
-	list-style: none;
-	margin: 40px 20px 0px 0px;
-}
-.slider .slick-dots button {
-	font-size: 0;
-	width: 15px;
-	height: 15px;
-	background-color: white;
-	border-radius: 50%;
-	outline: none;
-}
-.slider .slick-dots li.slick-active button {
-	background-color: transparent;
-	border: 1px solid white;
-}
-.slider .slick-dots button:hover {
-	opacity: 0.5;
-}*/
+
 /*РАЗДЕЛ ЗАГРУЗКА ФОТО  И ВИДЕО В ПОРТФОЛИО*/
 .form__container {
 	max-width: 1100px;
@@ -882,10 +805,19 @@ body {
 .back__third:hover {
 	transform: scale(1.05);
 }
-
-
-
-video {
+.portfolio__videos {
 	margin-top: 100px;
+}
+.portfolio__videos video {
+	outline: none
+}
+.portfolio__video {
+	position: absolute;
+	top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+.portfolio__video video {
 	outline: none
 }

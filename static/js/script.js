@@ -21,7 +21,7 @@ var backSecond = footer.querySelector('.back__second');
 var backThird = footer.querySelector('.back__third');
 var footerLinks = footer.querySelectorAll('.footer__link');
 
-body.style.opacity = '1';
+
 if (window.location.href.indexOf('portfolio') > -1) {
 	headerName.classList.add('color');
 	links.forEach((link) => {
@@ -51,10 +51,10 @@ if (window.location.href.indexOf('delete') > -1) {
 	backSecond.style.display = 'none';
 };
 
-/*if (!url.endsWith('video/') && !url.endsWith('portfolio/')) {
+if (window.location.href.indexOf('video') > -1 && window.location.href.indexOf('portfolio') > -1 && !url.endsWith('video/')) {
 	backFirst.style.display = 'none';
 	backThird.style.display = 'block';
-};*/
+};
 
 if (window.location.href.indexOf('video') > -1) {
 	backSecond.style.display = 'none';
@@ -66,6 +66,10 @@ if (window.location.href.indexOf('video/upload') > -1) {
 	backThird.style.display = 'block';
 	backThird.style.color = 'black';
 };
+
+window.onload = function() {
+	body.style.opacity = '1';
+}
 // Portfolio slider
 
 var mainSlider = document.querySelector('.slider');
@@ -104,7 +108,6 @@ next.addEventListener('click', function(evt) {
 		previous.classList.remove('disable');
 	};
 });
-
 
 previous.addEventListener('click', function(evt) {
 	evt.preventDefault;
