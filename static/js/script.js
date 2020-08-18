@@ -68,7 +68,8 @@ if (window.location.href.indexOf('video/upload') > -1) {
 };
 
 window.onload = function() {
-	body.style.opacity = '1';
+	var preloader = document.querySelector('.preloader');
+	preloader.style.display = 'none';
 }
 // Portfolio slider
 
