@@ -609,7 +609,22 @@ body {
 	max-width: 100%;
 	max-height: 600px;
 }
-
+.portfolio__videos {
+	
+}
+.portfolio__videos video {
+	outline: none
+}
+.portfolio__video {
+	position: absolute;
+	top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+.portfolio__video video {
+	outline: none
+}
 /*РАЗДЕЛ ЗАГРУЗКА ФОТО  И ВИДЕО В ПОРТФОЛИО*/
 .form__container {
 	max-width: 1100px;
@@ -768,6 +783,13 @@ body {
 	outline: none;
   	box-shadow: 0 0 0 4px #cbd6ee;
 }
+.container__blog {
+	position: absolute;
+	top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
 /*РАЗДЕЛ КОНТАКТЫ(ФУТЕР)*/
 .footer {
 	
@@ -829,20 +851,4 @@ body {
 }
 .back__third:hover {
 	transform: scale(1.05);
-}
-.portfolio__videos {
-	margin-top: 100px;
-}
-.portfolio__videos video {
-	outline: none
-}
-.portfolio__video {
-	position: absolute;
-	top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%)
-}
-.portfolio__video video {
-	outline: none
 }
