@@ -625,7 +625,7 @@ body {
 .portfolio__video video {
 	outline: none
 }
-/*РАЗДЕЛ ЗАГРУЗКА ФОТО  И ВИДЕО В ПОРТФОЛИО*/
+/*РАЗДЕЛ ЗАГРУЗКА ФОТО  И ВИДЕО В ПОРТФОЛИО И СОЗДАНИЕ ЗАПИСЕЙ В БЛОГЕ*/
 .form__container {
 	max-width: 1100px;
 	width: 100%;
@@ -647,6 +647,20 @@ body {
 }
 .body__style {
 	margin-left: 40px;
+}
+.post__title__style {
+	border: 1px solid #ccc; 
+    border-radius: 5px;
+    height: 25px;
+    width: 100%;
+    margin: 40px 40px 40px 0;
+}
+.post__body__style {
+	border: 1px solid #ccc; 
+    border-radius: 5px;
+    height: 100px;
+    width: 100%;
+    margin: 40px 40px 40px 0;
 }
 .upload__form button {
 	margin-top: 60px;

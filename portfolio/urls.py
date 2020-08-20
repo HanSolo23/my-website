@@ -3,9 +3,9 @@ from .views import *
 
 urlpatterns = [
     path('', portfolio_foto_slider, name='portfolio_url'),
-    path('upload/', UploadImage.as_view(), name='upload_image_url'),
+    path('upload', UploadImage.as_view(), name='upload_image_url'),
     path('<str:slug>', PortfolioFotoDetail.as_view(), name='portfolio_detail_url'),
-    path('<str:slug>/delete/', DeleteImage.as_view(), name='delete_image_url'),
+    path('<str:slug>/delete', DeleteImage.as_view(), name='delete_image_url'),
     path('video/', portfolio_video, name='portfolio_video_url'),
     path('video/upload', UploadVdo.as_view(), name='upload_video_url'),
     path('video/<str:slug>', PortfolioVideoDetail.as_view(), name='portfolio_video_detail_url'),

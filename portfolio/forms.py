@@ -16,8 +16,6 @@ class UploadImgForm(forms.ModelForm):
     def clean_title(self):
         new_title = self.cleaned_data['title'].lower()
 
-        if new_title == 'upload' or new_title == 'video' or new_title == 'Upload' or new_title == 'Video':
-            raise ValidationError('Title may not be "Upload" or "Video".')
         if UploadImg.objects.filter(title__iexact=new_title).count():
             raise ValidationError('Title must be unique. We have "{}" title already'.format(new_title))
         return new_title
@@ -36,8 +34,6 @@ class UploadVideoForm(forms.ModelForm):
     def clean_title(self):
         new_title = self.cleaned_data['title'].lower()
 
-        if new_title == 'upload' or new_title == 'video' or new_title == 'Upload' or new_title == 'Video':
-            raise ValidationError('Title may not be "Upload" or "Video".')
         if UploadVideo.objects.filter(title__iexact=new_title).count():
             raise ValidationError('Title must be unique. We have "{}" title already'.format(new_title))
         return new_title

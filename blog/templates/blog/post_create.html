@@ -1,8 +1,8 @@
-{% extends 'portfolio/base_portfolio.html' %}
+{% extends 'blog/base_blog.html' %}
 {% load static %}
 {% block content %}
 	<div class="form__container">
-		<form action="{% url 'upload_video_url' %}" method="post" enctype="multipart/form-data" autocomplete="off" class="upload__form">
+		<form action="{% url 'post_create_url' %}" method="post" autocomplete="off" class="upload__form">
 			{% csrf_token %}
 			{% for field in form %}
 			<div class="">
@@ -15,7 +15,7 @@
 				{{ field }}
 			</div>
 			{% endfor %}
-			<button type="submit">Upload Video</button>
+			<button type="submit">Create</button>
 		</form>
 	</div>
 {% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'portfolio/base_portfolio.html' %}
+{% load static %}
+{% block content %}
+	<div class="form__container">
+		<form action="{{ post.get_delete_url}}" method="post" class="delete__form">
+			{% csrf_token %}
+			<h3>Are you sure want to delete <b>"{{ post.title|title }}"</b> post?</h3>
+			<button type="submit">Delete</button>
+			<a href="{{ post.get_absolute_url }}" class="button__cancel"><button type="button">Cancel</button></a>
+		</form>
+	</div>
+{% endblock %}
