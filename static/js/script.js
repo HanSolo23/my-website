@@ -1,5 +1,4 @@
 // Burger menu settings
-
 var headerBurger = document.querySelector('.header__burger');
 var headerMenu = document.querySelector('.header__menu');
 var body = document.querySelector('body');
@@ -9,10 +8,7 @@ headerBurger.addEventListener('click', function() {
 	headerMenu.classList.toggle('active');
 	body.classList.toggle('lock');
 });
-
 // Main settings
-
-var body = document.querySelector('body');
 var headerName = body.querySelector('.header__name');
 var links = body.querySelectorAll('.link');
 var footer = body.querySelector('.footer');
@@ -26,20 +22,20 @@ if (window.location.href.indexOf('portfolio') > -1) {
 	links.forEach((link) => {
 		link.classList.add('color');
 	});
-	backFirst.style.display = 'block';
+	backFirst.style.display = 'inline-block';
 	footerLinks.forEach(footerLink => footerLink.style.display = 'none');
 	body.style.background = 'black center / cover no-repeat';
 } else if (window.location.href.indexOf('blog') > -1) {
 	headerName.classList.add('color');
 	links.forEach(link => link.classList.add('color'));
-	backFirst.style.display = 'block';
+	backFirst.style.display = 'inline-block';
 	backFirst.style.color = 'black';
 	footerLinks.forEach(footerLink => footerLink.style.display = 'none');
 	body.style.background = 'white center / cover no-repeat';
 };
 if (!window.location.href.endsWith('portfolio/') && window.location.href.indexOf('portfolio') > -1) {
 	backFirst.style.display = 'none';
-	backSecond.style.display = 'block';
+	backSecond.style.display = 'inline-block';
 };
 if (window.location.href.indexOf('upload') > -1) {
 	body.style.background = 'white center / cover no-repeat';
@@ -50,22 +46,21 @@ if (window.location.href.indexOf('upload') > -1) {
 };
 if (window.location.href.indexOf('video') > -1 && window.location.href.indexOf('portfolio') > -1 && !window.location.href.endsWith('video/')) {
 	backFirst.style.display = 'none';
-	backThird.style.display = 'block';
+	backThird.style.display = 'inline-block';
 } else if (window.location.href.indexOf('video') > -1) {
 	backSecond.style.display = 'none';
-	backFirst.style.display = 'block';
+	backFirst.style.display = 'inline-block';
 };
 if (window.location.href.indexOf('video/upload') > -1) {
 	backFirst.style.display = 'none';
-	backThird.style.display = 'block';
+	backThird.style.display = 'inline-block';
 	backThird.style.color = 'black';
 };
 window.onload = function() {
 	var preloader = document.querySelector('.preloader');
 	preloader.style.display = 'none';
-}
+};
 // Portfolio slider
-
 var mainSlider = document.querySelector('.slider');
 var sliderItems = mainSlider.querySelectorAll('.slider__item');
 var arrows = document.querySelector('.arrows');

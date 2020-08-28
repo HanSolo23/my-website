@@ -16,67 +16,63 @@
   	<span style="--delay: 0.4s">↓</span>
   	<span style="--delay: 0.5s">↓</span>
 </div>
-	<div class="wrapper">
-		<div class="content">
-			<header class="header">
-				<div class="container">
-					<div class="header__body">
-						<a href="{% url 'main' %}" class="header__name">
-							<h1 class="title_1">IVAN TARAN</h1>
-						</a>
-						<div class="header__burger">
-							<span></span>
-						</div>
-						<nav class="header__menu">
-							<ul class="header__list">
-								<li class="header__link">
-									<a href="{% url 'main' %}" class="link">ГЛАВНАЯ</a>
-								</li>
-								<li class="header__link">
-									<a href="{% url 'portfolio_url' %}" class="link">ФОТОКАРТОЧКИ</a>
-								</li>
-								<li class="header__link">
-									<a href="{% url 'portfolio_video_url' %}" class="link">ВИДЕОКАРТОЧКИ</a>
-								</li>
-								<li class="header__link">
-									<a href="{% url 'blog_url' %}" class="link">БЛОГ</a>
-								</li>
-							</ul>
-						</nav>
-					</div>
+	<header class="header">
+		<div class="container">
+			<div class="header__body">
+				<a href="{% url 'main' %}" class="header__name">
+					<h1 class="title_1">IVAN TARAN</h1>
+				</a>
+				<div class="header__burger">
+					<span></span>
 				</div>
-			</header>
-			<main>
-				{% block content %}
-				{% endblock %}
-				{% if request.user.is_authenticated and request.user.is_staff %}
-				<div class="admin__panel">
-					<a href="/admin" class="button__admin"><button>Admin</button></a>
-					<a href="{% url 'upload_image_url' %}" class="button__upload" style="{% if img %}display:block{% endif %}"><button>Upload</button></a>
-					<a href="{% url 'upload_video_url' %}" class="button__upload" style="{% if vdo %}display:block{% endif %}"><button>Upload</button></a>
-					<a href="{% url 'post_create_url' %}" class="button__upload" style="{% if pst %}display:block{% endif %}"><button>Create</button></a>
-					<a href="{{ admin_object.get_delete_url }}" class="button__delete" style="{% if delete %}display:block{% endif %}"><button>Delete</button></a>
-				</div>
-				{% endif %}
-			</main>
-		</div>
-		<footer class="footer">
-			<div class="container">
-				<a href="{% url 'main' %}" class="back__first"><h1>Back</h1></a>
-				<a href="{% url 'portfolio_url' %}" class="back__second"><h1>Back</h1></a>
-				<a href="{% url 'portfolio_video_url' %}" class="back__third"><h1>Back</h1></a>
-				<a href="https://t.me/HanSolo23" class="footer__link">
-					<img src="{% static 'img/icon6.png' %}" alt="">
-				</a>
-				<a href="https://www.instagram.com/van4ous/?hl=ru" class="footer__link">
-					<img src="{% static 'img/icon7.png' %}" alt="">
-				</a>
-				<a href="https://wa.me/79189953630" class="footer__link">
-					<img src="{% static 'img/icon8.png' %}" alt="">
-				</a>
+				<nav class="header__menu">
+					<ul class="header__list">
+						<li class="header__link">
+							<a href="{% url 'main' %}" class="link">ГЛАВНАЯ</a>
+						</li>
+						<li class="header__link">
+							<a href="{% url 'portfolio_url' %}" class="link">ФОТОКАРТОЧКИ</a>
+						</li>
+						<li class="header__link">
+							<a href="{% url 'portfolio_video_url' %}" class="link">ВИДЕОКАРТОЧКИ</a>
+						</li>
+						<li class="header__link">
+							<a href="{% url 'blog_url' %}" class="link">БЛОГ</a>
+						</li>
+					</ul>
+				</nav>
 			</div>
-		</footer>
-	</div>
+		</div>
+	</header>
+	<main>
+		{% block content %}
+		{% endblock %}
+		{% if request.user.is_authenticated and request.user.is_staff %}
+		<div class="admin__panel">
+			<a href="/admin" class="button__admin"><button>Admin</button></a>
+			<a href="{% url 'upload_image_url' %}" class="button__upload" style="{% if img %}display:block{% endif %}"><button>Upload</button></a>
+			<a href="{% url 'upload_video_url' %}" class="button__upload" style="{% if vdo %}display:block{% endif %}"><button>Upload</button></a>
+			<a href="{% url 'post_create_url' %}" class="button__upload" style="{% if pst %}display:block{% endif %}"><button>Create</button></a>
+			<a href="{{ admin_object.get_delete_url }}" class="button__delete" style="{% if delete %}display:block{% endif %}"><button>Delete</button></a>
+		</div>
+		{% endif %}
+	</main>
+	<footer class="footer">
+		<div class="container__footer">
+			<a href="{% url 'main' %}" class="back__first"><h1>Back</h1></a>
+			<a href="{% url 'portfolio_url' %}" class="back__second"><h1>Back</h1></a>
+			<a href="{% url 'portfolio_video_url' %}" class="back__third"><h1>Back</h1></a>
+			<a href="https://t.me/HanSolo23" class="footer__link">
+				<img src="{% static 'img/icon6.png' %}" alt="">
+			</a>
+			<a href="https://www.instagram.com/van4ous/?hl=ru" class="footer__link">
+				<img src="{% static 'img/icon7.png' %}" alt="">
+			</a>
+			<a href="https://wa.me/79189953630" class="footer__link">
+				<img src="{% static 'img/icon8.png' %}" alt="">
+			</a>
+		</div>
+	</footer>
 	<script src="{% static 'js/script.js' %}"></script>	
 </body>
 </html>

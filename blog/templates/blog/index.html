@@ -2,8 +2,8 @@
 {% load static %}
 {% block content %}
 <div class="container__blog">
-	<div class="blog">	
-		{% for post in posts %}
+	{% for post in posts %}
+		<div class="blog">	
 			<div class="posts__date">
 				{{ post.date }}
 			</div>
@@ -20,7 +20,7 @@
 			<div class="read__post">
 				<a href="{{ post.get_absolute_url }}">Read</a>
 			</div>
-		{% endfor %}
-	</div>
+		</div>
+	{% endfor %}
 </div>
 {% endblock %}

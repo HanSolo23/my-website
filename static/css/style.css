@@ -3,6 +3,13 @@ html, body {
 }
 body {
 	background: white center / cover no-repeat;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+
+}
+main {
+	flex: 1 0 auto;
 	
 }
 *,*:before,*:after {
@@ -11,10 +18,12 @@ body {
 	border: 0;
 	box-sizing: border-box;
 }
+/*.wrapper {
+	
+}*/
 .wrapper {
-	display: flex;
-	flex-direction: column;
-	min-height: 100%;
+	
+	
 }
 .container {
 	max-width: 1200px;
@@ -48,15 +57,14 @@ body {
   	animation: arrows 1s var(--delay) infinite ease-in;
 }
 /*ШАПКА САЙТА И ТИТУЛЬНАЯ СТРАНИЦА*/
-.content {
-	flex: 1 0 auto;
-}
+
 .header {/*шапка будет зафиксирована*/
 	position: fixed;
 	width: 100%;
 	top: 10px;
 	left: 0;
 	z-index: 50;
+	flex: 1 0 auto;
 }
 .header:before {/*создается шапка*/
 	content: '';
@@ -269,7 +277,7 @@ body {
 
 /*РАЗДЕЛ ГЛАВНАЯ СТРАНИЦА*/
 .container_2 {
-	width: 1700px;
+	max-width: 1700px;
 	position: absolute;
     top: 50%;
     left: 50%;
@@ -279,7 +287,7 @@ body {
 .main__page {
 	display: flex;
 	position: relative;
-	
+
 }
 .last__life {
 	position: relative;
@@ -292,14 +300,17 @@ body {
 }
 .text_1 {
 	position: absolute;
-	top: 350px;
-	left: 240px;
+	top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
 	font-family: 'Montserrat', sans-serif;
 	color: white;
 	padding: 15px;
 	opacity: 1;
 	background: rgb(0, 0, 0, 0.65);
 	transition: all 7s ease 0s;
+	font-size: 0.85vw;
 }
 .story_1 {
 	position: absolute;
@@ -365,8 +376,10 @@ body {
 }
 .text_2 {
 	position: absolute;
-	top: 170px;
-	left: 100px;
+	top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
 	font-family: 'Montserrat', sans-serif;
 	color: white;
 	padding: 5px;
@@ -417,8 +430,10 @@ body {
 }
 .text_3 {
 	position: absolute;
-	top: 184px;
-	left: 80px;
+	top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
 	font-family: 'Montserrat', sans-serif;
 	color: white;
 	padding: 5px;
@@ -546,7 +561,7 @@ body {
 	
 }
 .container__portfolio {
-	width: 1700px;
+	max-width: 1700px;
 	position: absolute;
     top: 50%;
     left: 50%;
@@ -624,6 +639,29 @@ body {
 }
 .portfolio__video video {
 	outline: none
+}
+/*РАЗДЕЛ БЛОГ*/
+.container__blog {
+	max-width: 1700px;
+	display: flex;
+	flex-wrap: wrap;
+	font-family: 'Montserrat', sans-serif;
+	position: relative;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+	
+}
+.blog {
+	width: 300px;
+	margin: 20px 20px 20px 20px;
+	padding: 5px 5px 5px 5px;
+	border: 1px solid #999;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
 }
 /*РАЗДЕЛ ЗАГРУЗКА ФОТО  И ВИДЕО В ПОРТФОЛИО И СОЗДАНИЕ ЗАПИСЕЙ В БЛОГЕ*/
 .form__container {
@@ -797,21 +835,18 @@ body {
 	outline: none;
   	box-shadow: 0 0 0 4px #cbd6ee;
 }
-.container__blog {
-	position: absolute;
-	top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%)
-}
 /*РАЗДЕЛ КОНТАКТЫ(ФУТЕР)*/
+.container__footer {
+	max-width: 1200px;
+	margin: 0px auto;
+	padding: 0px 80px;
+}
 .footer {
-	
+	flex: 0 0 auto;
 }
 .footer img {
 	padding: 0px 15px 25px 0px;
 	transition: all 1s ease;
-	
 }
 .footer a {
 	text-decoration: none;
@@ -822,8 +857,7 @@ body {
 	transition: all 1s ease;
 }
 .back__first {
-	position: absolute;
-	bottom: 61px;
+	margin: 0px 0px 61px 0px;
 	display: none;
 	text-decoration: none;
 	outline: none;
@@ -831,14 +865,13 @@ body {
 	font-family: 'Montserrat', sans-serif;
 	transform: scale(1);
 	transition: all 1s ease;
-	z-index: 3;
 }
 .back__first:hover {
 	transform: scale(1.05);
+	transition: all 1s ease;
 }
 .back__second {
-	position: absolute;
-	bottom: 61px;
+	margin: 0px 0px 61px 0px;
 	display: none;
 	text-decoration: none;
 	outline: none;
@@ -846,14 +879,13 @@ body {
 	font-family: 'Montserrat', sans-serif;
 	transform: scale(1);
 	transition: all 1s ease;
-	z-index: 3;
 }
 .back__second:hover {
 	transform: scale(1.05);
+	transition: all 1s ease;
 }
 .back__third {
-	position: absolute;
-	bottom: 61px;
+	margin: 0px 0px 61px 0px;
 	display: none;
 	text-decoration: none;
 	outline: none;
@@ -861,8 +893,8 @@ body {
 	font-family: 'Montserrat', sans-serif;
 	transform: scale(1);
 	transition: all 1s ease;
-	z-index: 3;
 }
 .back__third:hover {
 	transform: scale(1.05);
+	transition: all 1s ease;
 }
