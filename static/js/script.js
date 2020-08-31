@@ -10,6 +10,7 @@ headerBurger.addEventListener('click', function() {
 });
 // Main settings
 var headerName = body.querySelector('.header__name');
+var header = body.querySelector('.header');
 var links = body.querySelectorAll('.link');
 var footer = body.querySelector('.footer');
 var backFirst = footer.querySelector('.back__first');
@@ -26,12 +27,11 @@ if (window.location.href.indexOf('portfolio') > -1) {
 	footerLinks.forEach(footerLink => footerLink.style.display = 'none');
 	body.style.background = 'black center / cover no-repeat';
 } else if (window.location.href.indexOf('blog') > -1) {
-	headerName.classList.add('color');
+	header.style.display = 'none';
 	links.forEach(link => link.classList.add('color'));
 	backFirst.style.display = 'inline-block';
-	backFirst.style.color = 'black';
 	footerLinks.forEach(footerLink => footerLink.style.display = 'none');
-	body.style.background = 'white center / cover no-repeat';
+	body.style.background = 'black center / cover no-repeat';
 };
 if (!window.location.href.endsWith('portfolio/') && window.location.href.indexOf('portfolio') > -1) {
 	backFirst.style.display = 'none';

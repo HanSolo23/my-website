@@ -6,24 +6,21 @@ body {
 	display: flex;
 	flex-direction: column;
 	height: 100%;
+	justify-content: center; 
+
 
 }
 main {
 	flex: 1 0 auto;
-	
+	display: flex;
+	justify-content: center; 
+    align-items: center;
 }
 *,*:before,*:after {
 	padding: 0;
 	margin: 0;
 	border: 0;
 	box-sizing: border-box;
-}
-/*.wrapper {
-	
-}*/
-.wrapper {
-	
-	
 }
 .container {
 	max-width: 1200px;
@@ -59,7 +56,7 @@ main {
 /*ШАПКА САЙТА И ТИТУЛЬНАЯ СТРАНИЦА*/
 
 .header {/*шапка будет зафиксирована*/
-	position: fixed;
+	position: relative;
 	width: 100%;
 	top: 10px;
 	left: 0;
@@ -278,11 +275,7 @@ main {
 /*РАЗДЕЛ ГЛАВНАЯ СТРАНИЦА*/
 .container_2 {
 	max-width: 1700px;
-	position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%)
+	
 }
 .main__page {
 	display: flex;
@@ -562,11 +555,7 @@ main {
 }
 .container__portfolio {
 	max-width: 1700px;
-	position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%)
+	
 }
 .portfolio {
 	overflow: hidden;
@@ -586,18 +575,19 @@ main {
 	max-width: 100%;
 	height: 500px;
 }
+.arrows {
+	display: flex;
+	justify-content: space-between;
+}
 .arrows .prev {
-	position: absolute;
 	background: url('img/back.png') 0 0 / 100% no-repeat;
 	padding: 50px 50px 50px 50px;
 	transform: scale(1);
 	transition: all 1s ease 0s;
 }
 .arrows .next {
-	position: absolute;
 	background: url('img/forward.png') 0 0 / 100% no-repeat;
 	padding: 50px 50px 50px 50px;
-	left: 1200px;
 	transform: scale(1);
 	transition: all 1s ease 0s;
 }
@@ -614,11 +604,7 @@ main {
 	cursor: none;
 }
 .portfolio__image {
-	position: absolute;
-	top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%)
+	
 }
 .portfolio__image img {
 	max-width: 100%;
@@ -631,11 +617,7 @@ main {
 	outline: none
 }
 .portfolio__video {
-	position: absolute;
-	top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%)
+	
 }
 .portfolio__video video {
 	outline: none
@@ -646,22 +628,54 @@ main {
 	display: flex;
 	flex-wrap: wrap;
 	font-family: 'Montserrat', sans-serif;
-	position: relative;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%)
 	
 }
 .blog {
 	width: 300px;
-	margin: 20px 20px 20px 20px;
-	padding: 5px 5px 5px 5px;
+	margin: 40px 40px 40px 40px;
+	padding: 20px 20px 20px 20px;
 	border: 1px solid #999;
 	border-radius: 10px;
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
+	justify-content: space-around;
+	color: white;
+}
+.read__post {
+	padding: 20px 20px 20px 20px;
+}
+.read__post a {
+	outline: none;
+	text-decoration: none;
+	color: white;
+}
+.read__post a button {
+	width: 100px;
+	border: 0;
+  	border-radius: 5px;
+  	background: #008000;
+  	color: #fff;
+  	padding: 8px 16px;
+  	font-size: 16px;
+  	transform: scale(1);
+  	transition: all 1s ease 0s;
+}
+.read__post a button:hover {
+	transform: scale(1.05);
+	transition: all 1s ease 0s;
+}
+.post {
+	width: 300px;
+	margin: 40px 40px 40px 40px;
+	padding: 20px 20px 20px 20px;
+	border: 1px solid #999;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	color: white;
 }
 /*РАЗДЕЛ ЗАГРУЗКА ФОТО  И ВИДЕО В ПОРТФОЛИО И СОЗДАНИЕ ЗАПИСЕЙ В БЛОГЕ*/
 .form__container {
