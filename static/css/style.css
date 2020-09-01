@@ -628,7 +628,6 @@ main {
 	display: flex;
 	flex-wrap: wrap;
 	font-family: 'Montserrat', sans-serif;
-	
 }
 .blog {
 	width: 300px;
@@ -676,18 +675,17 @@ main {
 	flex-wrap: wrap;
 	justify-content: space-around;
 	color: white;
+	font-family: 'Montserrat', sans-serif;
 }
 /*РАЗДЕЛ ЗАГРУЗКА ФОТО  И ВИДЕО В ПОРТФОЛИО И СОЗДАНИЕ ЗАПИСЕЙ В БЛОГЕ*/
 .form__container {
-	max-width: 1100px;
+	max-width: 400px;
 	width: 100%;
-	margin-bottom: 249px;
+
 }
 .upload__form {
     display: flex;
     flex-direction: column;
-    padding-top: 200px;
-    padding-left: 700px;
     font-family: 'Montserrat', sans-serif;
 }
 .title__style {
@@ -812,8 +810,6 @@ main {
 }
 /*РАЗДЕЛ СТРАНИЦА УДАЛЕНИЯ ФОТО И ВИДЕО*/
 .delete__form {
-	padding-top: 325px;
-    padding-left: 700px;
     font-family: Avenir, sans-serif;
 }
 .delete__form .button__cancel button {
@@ -909,6 +905,20 @@ main {
 	transition: all 1s ease;
 }
 .back__third:hover {
+	transform: scale(1.05);
+	transition: all 1s ease;
+}
+.back__fourth {
+	margin: 0px 0px 61px 0px;
+	display: none;
+	text-decoration: none;
+	outline: none;
+	color: white;
+	font-family: 'Montserrat', sans-serif;
+	transform: scale(1);
+	transition: all 1s ease;
+}
+.back__fourth:hover {
 	transform: scale(1.05);
 	transition: all 1s ease;
 }

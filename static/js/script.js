@@ -16,10 +16,11 @@ var footer = body.querySelector('.footer');
 var backFirst = footer.querySelector('.back__first');
 var backSecond = footer.querySelector('.back__second');
 var backThird = footer.querySelector('.back__third');
+var backFourth = footer.querySelector('.back__fourth');
 var footerLinks = footer.querySelectorAll('.footer__link');
 
 if (window.location.href.indexOf('portfolio') > -1) {
-	headerName.classList.add('color');
+	header.style.display = 'none';
 	links.forEach((link) => {
 		link.classList.add('color');
 	});
@@ -46,15 +47,24 @@ if (window.location.href.indexOf('upload') > -1) {
 };
 if (window.location.href.indexOf('video') > -1 && window.location.href.indexOf('portfolio') > -1 && !window.location.href.endsWith('video/')) {
 	backFirst.style.display = 'none';
+	backSecond.style.display = 'none';
 	backThird.style.display = 'inline-block';
 } else if (window.location.href.indexOf('video') > -1) {
 	backSecond.style.display = 'none';
 	backFirst.style.display = 'inline-block';
+} else if (!window.location.href.endsWith('post/') && window.location.href.indexOf('post') > -1) {
+	backFirst.style.display = 'none';
+	backFourth.style.display = 'inline-block';
 };
 if (window.location.href.indexOf('video/upload') > -1) {
 	backFirst.style.display = 'none';
 	backThird.style.display = 'inline-block';
 	backThird.style.color = 'black';
+} else if (window.location.href.indexOf('post/create') > -1) {
+	body.style.background = 'white center / cover no-repeat';
+	backFirst.style.display = 'none';
+	backFourth.style.display = 'inline-block';
+	backFourth.style.color = 'black';
 };
 window.onload = function() {
 	var preloader = document.querySelector('.preloader');
