@@ -83,18 +83,21 @@ var arrows = document.querySelector('.arrows');
 var previous = arrows.querySelector('.prev');
 var next = arrows.querySelector('.next');
 var container = document.querySelector('.portfolio');
-var constant = 3;
 var itemWidth = container.clientWidth;
-var movePosition = Math.round(itemWidth / constant);
+
+var movePosition = () => {
+	let constant = 3;
+	return Math.round(itemWidth / constant);
+}
 
 next.addEventListener('click', () => {
-	row -= movePosition;
+	row -= movePosition();
 	position();
 	disableArrows();
 });
 
 previous.addEventListener('click', () => {
-	row += movePosition;
+	row += movePosition();
 	position();
 	disableArrows();
 });
