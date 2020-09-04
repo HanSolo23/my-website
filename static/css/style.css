@@ -571,7 +571,7 @@ main {
 }
 
 .slider__item img {
-	max-width: 100%;
+	max-width: 1000px;
   	width: auto\9;
   	height: 100%;
   	vertical-align: middle;

@@ -87,13 +87,6 @@ var constant = 3;
 var itemWidth = container.clientWidth;
 var movePosition = Math.round(itemWidth / constant);
 
-var maxWidthOfElement = (items) => {
-	var elements = [];
-	items.forEach(item => elements.push(item.querySelector('.media__element')));
-	elements.forEach(item => item.style.maxWidth = `${itemWidth}px`);
-};
-maxWidthOfElement(sliderItems);
-
 next.addEventListener('click', () => {
 	row -= movePosition;
 	position();
