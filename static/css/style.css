@@ -89,8 +89,7 @@ main {
 	transform: scale(1);
 	transition: all 1s ease
 }
-.color {
-	color: white;
+.display {
 	display: none;
 }
 .header__name h1{
@@ -123,9 +122,6 @@ main {
 	text-decoration: none;
 	outline: none;
 	font-family: 'Montserrat', sans-serif;
-}
-.color {
-	color: white;
 }
 .header__link:hover {
 	transform: scale(1.05);
@@ -566,15 +562,22 @@ main {
 }
 .slider__item {
 	outline: none;
-	margin: 0px 20px 0px 0px;
+	padding: 10px 10px 10px 10px;
 	transition: all 1s ease 0s;
 	text-align: center;
+ 	
+  	height: 500px;
+
 }
 
 .slider__item img {
 	max-width: 100%;
-	height: 500px;
+  	width: auto\9;
+  	height: 100%;
+  	vertical-align: middle;
+  	border: 0;
 }
+
 .arrows {
 	display: flex;
 	justify-content: space-between;
@@ -598,6 +601,12 @@ main {
 .arrows .next:hover {
 	transform: scale(0.95);
 	transition: all 1s ease 0s;
+}
+.arrows .prev,.prev:active,.prev:focus {
+	outline: none;
+}
+.arrows .next,.next:active,.next:focus {
+	outline: none;
 }
 .disable {
 	pointer-events: none;

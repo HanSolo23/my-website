@@ -7,14 +7,14 @@
 			<div class="slider">
 				{% for image in images %}
 				<div class="slider__item">
-					<a href="{{ image.get_absolute_url }}"><img src="{{ image.body.url }}" alt="{{ uploadimg.title }}"></a>
+					<a href="{{ image.get_absolute_url }}"><img src="{{ image.body.url }}" alt="{{ uploadimg.title }}" class="media__element"></a>
 				</div>
 				{% endfor %}
 			</div>
 		</div>
 		<div class="container arrows">
-			<a href="#" class="prev"></a>
-			<a href="#" class="next"></a>
+			<button class="prev"></button>
+			<button class="next"></button>
 		</div>
 	</div>
 </div>
