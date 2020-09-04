@@ -116,38 +116,3 @@ var disableArrows = () => {
 };
 
 disableArrows();
-/*var mainSlider = document.querySelector('.slider');
-var sliderItems = mainSlider.querySelectorAll('.slider__item');
-var arrows = document.querySelector('.arrows');
-var previous = arrows.querySelector('.prev');
-var next = arrows.querySelector('.next');
-var container = document.querySelector('.portfolio');
-var toShow = 3;
-var toScroll = 1;
-var itemWidth = Math.round(container.clientWidth / toShow);
-var movePosition = Math.round(itemWidth * toScroll);
-
-var allImages = function(items) {
-	var elements = [];
-	items.forEach(item => elements.push(item.querySelector('.media__element')));
-	return elements;
-};
-
-sliderItems.forEach(sliderItem => sliderItem.style.minWidth = `${itemWidth}px`);
-
-var row = 0;
-next.addEventListener('click', function(evt) {
-	evt.preventDefault;
-	row -= movePosition;
-	mainSlider.style.transform = `translateX(${row}px)`;
-	(-row === (allImages(sliderItems).length - 5) * movePosition) ? next.classList.add('disable') : next.classList.remove('disable');
-	row !== movePosition ? previous.classList.remove('disable') : next.classList.add('disable');
-});
-
-previous.addEventListener('click', function(evt) {
-	evt.preventDefault;
-	row += movePosition;
-	mainSlider.style.transform = `translateX(${row}px)`;
-	/*row === movePosition ? previous.classList.add('disable') : previous.classList.remove('disable');
-	(-row !== (allImages(sliderItems).length - 5) * movePosition) ? next.classList.remove('disable') next.classList.add('disable');
-});*/
