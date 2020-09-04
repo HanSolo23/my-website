@@ -108,7 +108,7 @@ var position = () => {
 
 var disableArrows = () => {
 	previous.disabled = row === 0;
-	next.disabled = row <= -(sliderItems.length - (Math.round((sliderItems.length * movePosition / itemWidth) - constant))) * movePosition;
+	next.disabled = row <= -(sliderItems.length - (Math.round((sliderItems.length * movePosition() / itemWidth) - constant))) * movePosition();
 };
 
 disableArrows();
