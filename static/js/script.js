@@ -84,11 +84,11 @@ var previous = arrows.querySelector('.prev');
 var next = arrows.querySelector('.next');
 var container = document.querySelector('.portfolio');
 var itemWidth = container.clientWidth;
+var constant = 3;
 
 var movePosition = () => {
-	let constant = 3;
 	return Math.round(itemWidth / constant);
-}
+};
 
 next.addEventListener('click', () => {
 	row -= movePosition();
