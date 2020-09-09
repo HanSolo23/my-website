@@ -7,14 +7,13 @@ body {
 	flex-direction: column;
 	height: 100%;
 	justify-content: center; 
-
-
 }
 main {
 	flex: 1 0 auto;
 	display: flex;
 	justify-content: center; 
     align-items: center;
+    max-height: 800px;
 }
 *,*:before,*:after {
 	padding: 0;
@@ -25,7 +24,7 @@ main {
 .container {
 	max-width: 1200px;
 	margin: 0px auto;
-	padding: 0px 80px;
+	padding: 0px 160px;
 }
 /* PRELOADER */
 .preloader {
@@ -62,6 +61,7 @@ main {
 	left: 0;
 	z-index: 50;
 	flex: 1 0 auto;
+	max-height: 50px;
 }
 .header:before {/*создается шапка*/
 	content: '';
@@ -71,13 +71,11 @@ main {
 	width: 100%;
 	height: 100%;
 	background-color: none;
-	z-index: 2;
 }
 .header__body {/*распределение контента в шапке*/
 	position: relative;
 	display: flex;
 	justify-content: space-between;
-	height: 80px;
 	align-items: center;
 }
 .header__name {
@@ -85,7 +83,6 @@ main {
 	color: #282826;
 	position: relative;
 	z-index: 3;
-	font-size: 18px;
 	transform: scale(1);
 	transition: all 1s ease
 }
@@ -104,13 +101,10 @@ main {
 .header__list {
 	display: flex;
 	position: relative;
-	z-index: 2;
-
 }
 .header__list li {
 	list-style: none;
 	margin: 0px 0px 0px 20px;
-
 }
 .header__link {
 	transform: scale(1) translateZ(0);  
@@ -118,7 +112,6 @@ main {
 }
 .link {
 	color: #282826;
-	font-size: 18px;
 	text-decoration: none;
 	outline: none;
 	font-family: 'Montserrat', sans-serif;
@@ -133,18 +126,28 @@ main {
 }
 
 @media (max-width: 1200px){
-	.header__body {
-		height: 60px;
+	.header__name {
+		font-size: 16px;
 	}
+	.header__link {
+		font-size: 16px;
+	}
+	main {
+    	max-height: 700px;
+	}
+}
+@media (max-width: 1050px){
 	.header__name {
 		font-size: 13px;
 	}
 	.header__link {
 		font-size: 13px;
 	}
+	main {
+    	max-height: 600px;
+	}
 }
-
-@media (max-width: 900px){/*верстка бургерного меню*/
+@media (max-width: 950px){/*верстка бургерного меню*/
 	body.lock {
 		overflow: hidden;
 	}
@@ -276,13 +279,14 @@ main {
 .main__page {
 	display: flex;
 	position: relative;
-
+	margin: 50px 50px 50px 50px;
 }
 .last__life {
 	position: relative;
-	padding-right: 20px;
+	flex: 1 1 50%;
 	transform: scale(1);
 	transition: all 1s ease 0s;
+	margin-right: 15px;
 }
 .last__life img {
 	max-width: 100%;
@@ -304,8 +308,11 @@ main {
 .story_1 {
 	position: absolute;
 	max-width: 75%;
-	top: 50px;
-	left: 50px;
+	top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+	font-size: 0.85vw;
 }
 .story_1 p {
 	font-family: 'Montserrat', sans-serif;
@@ -356,12 +363,13 @@ main {
 .new__life {
 	display: flex;
 	flex-direction: column; 
-	flex: 0 0 32.4%;
+	flex: 0 0 32.45%;
 }
 .new__life_1 {
 	position: relative;
 	transform: scale(1);
 	transition: all 1s ease 0s;
+	margin-bottom: 15px;
 }
 .text_2 {
 	position: absolute;
@@ -375,12 +383,16 @@ main {
 	opacity: 1;
 	background: rgb(0, 0, 0, 0.65);
 	transition: all 7s ease 0s;
+	font-size: 0.85vw;
 }
 .story_2 {
 	position: absolute;
 	max-width: 100%;
-	top: 20px;
-	left: 20px;
+	top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+	font-size: 0.85vw;
 }
 .story_2 p {
 	font-family: 'Montserrat', sans-serif;
@@ -413,9 +425,9 @@ main {
 }
 .new__life_2 {
 	position: relative;
-	padding-top: 15px;
 	transform: scale(1);
 	transition: all 1s ease 0s;
+
 }
 .text_3 {
 	position: absolute;
@@ -429,12 +441,16 @@ main {
 	opacity: 1;
 	background: rgb(0, 0, 0, 0.65);
 	transition: all 7s ease 0s;
+	font-size: 0.85vw;
 }
 .story_3 {
 	position: absolute;
 	max-width: 100%;
-	top: 90px;
-	left: 20px;
+	top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+	font-size: 0.85vw;
 }
 .story_3 p {
 	font-family: 'Montserrat', sans-serif;
@@ -544,14 +560,49 @@ main {
 	opacity: 1;
 	transition: all 1.7s ease 0s;
 }
-
+@media (max-width: 1600px){
+	.new__life {
+	 
+		flex: 0 0 32.35%;
+	}
+}
+@media (max-width: 1440px){
+	.new__life {
+	 
+		flex: 0 0 32.26%;
+	}
+}
+@media (max-width: 1280px){
+	.new__life {
+	 
+		flex: 0 0 32.11%;
+	}
+}
+@media (max-width: 1180px){
+	.new__life {
+	 
+		flex: 0 0 32%;
+	}
+}
+@media (max-width: 1080px){
+	.new__life {
+	 
+		flex: 0 0 31.85%;
+	}
+}
+@media (max-width: 980px){
+	.new__life {
+	 
+		flex: 0 0 31.65%;
+	}
+}
 /*РАЗДЕЛ ПОРТФОЛИО*/
 .body__portfolio {
-	
+	margin-top: 100px;
 }
 .container__portfolio {
 	max-width: 1700px;
-	
+
 }
 .portfolio {
 	overflow: hidden;
@@ -858,7 +909,7 @@ main {
 .container__footer {
 	max-width: 1200px;
 	margin: 0px auto;
-	padding: 0px 80px;
+	padding: 0px 160px;
 }
 .footer {
 	flex: 0 0 auto;

@@ -87,7 +87,7 @@ var itemWidth = container.clientWidth;
 var constant = 3;
 
 var movePosition = () => {
-	return Math.round(itemWidth / constant);
+	return itemWidth / constant;
 };
 
 next.addEventListener('click', () => {
