@@ -37,7 +37,7 @@ main {
   	z-index: 1000;
   	background-color: white;
 }
-@keyframes arrows {
+@keyframes dots {
   	0%,
   	100% {
     	color: black;
@@ -50,7 +50,7 @@ main {
 }
 .preloader span {
   	--delay: 0s;
-  	animation: arrows 1s var(--delay) infinite ease-in;
+  	animation: dots 1s var(--delay) infinite ease-in;
 }
 /*ШАПКА САЙТА И ТИТУЛЬНАЯ СТРАНИЦА*/
 
@@ -562,19 +562,16 @@ main {
 }
 @media (max-width: 1600px){
 	.new__life {
-	 
 		flex: 0 0 32.35%;
 	}
 }
 @media (max-width: 1440px){
 	.new__life {
-	 
 		flex: 0 0 32.26%;
 	}
 }
 @media (max-width: 1280px){
 	.new__life {
-	 
 		flex: 0 0 32.11%;
 	}
 	.story_1 p {
@@ -595,7 +592,6 @@ main {
 }
 @media (max-width: 1180px){
 	.new__life {
-	 
 		flex: 0 0 32%;
 	}
 }
@@ -618,7 +614,6 @@ main {
 }
 @media (max-width: 1080px){
 	.new__life {
-	 
 		flex: 0 0 31.85%;
 	}
 }
@@ -641,17 +636,20 @@ main {
 }
 @media (max-width: 980px){
 	.new__life {
-	 
 		flex: 0 0 31.65%;
 	}
 }
 /*РАЗДЕЛ ПОРТФОЛИО*/
 .body__portfolio {
-	margin-top: 100px;
+	margin: 50px 50px 50px 50px;
+	display: flex;
+	justify-content: center; 
+	align-items: center;
+	max-width: 100%;
 }
 .container__portfolio {
-	max-width: 1700px;
-
+	max-width: 100%;
+	padding: 50px 50px 50px 50px;
 }
 .portfolio {
 	overflow: hidden;
@@ -665,19 +663,12 @@ main {
 	padding: 10px 10px 10px 10px;
 	transition: all 1s ease 0s;
 	text-align: center;
- 	
   	height: 500px;
-
 }
-
 .slider__item img {
 	max-width: 1000px;
-  	width: auto\9;
   	height: 100%;
-  	vertical-align: middle;
-  	border: 0;
 }
-
 .arrows {
 	display: flex;
 	justify-content: space-between;
@@ -731,15 +722,33 @@ main {
 .portfolio__video video {
 	outline: none
 }
+@media (max-width: 1600px){
+	
+	.slider__item {
+  		height: 400px;
+	}
+}
+@media (max-width: 1400px){
+	.slider__item {
+  		height: 300px;
+	}
+}
+@media (max-width: 1200px){
+	.slider__item {
+  		height: 250px;
+	}
+}
 /*РАЗДЕЛ БЛОГ*/
 .container__blog {
 	max-width: 1700px;
 	display: flex;
+	justify-content: center; 
+	align-items: center;
 	flex-wrap: wrap;
 	font-family: 'Montserrat', sans-serif;
 }
 .blog {
-	width: 300px;
+	width: 400px;
 	margin: 40px 40px 40px 40px;
 	padding: 20px 20px 20px 20px;
 	border: 1px solid #999;

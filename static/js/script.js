@@ -85,9 +85,9 @@ var next = arrows.querySelector('.next');
 var container = document.querySelector('.portfolio');
 var itemWidth = container.clientWidth;
 var constant = 3;
-
+console.log(itemWidth)
 var movePosition = () => {
-	return itemWidth / constant;
+	return Math.round(itemWidth / constant);
 };
 
 next.addEventListener('click', () => {
@@ -108,7 +108,7 @@ var position = () => {
 
 var disableArrows = () => {
 	previous.disabled = row === 0;
-	next.disabled = row <= -(sliderItems.length - (Math.round((sliderItems.length * movePosition() / itemWidth) - constant))) * movePosition();
+	/*next.disabled = row <= -(sliderItems.length - (Math.round((sliderItems.length * movePosition() / itemWidth) - constant))) * movePosition();*/
 };
 
 disableArrows();
