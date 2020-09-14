@@ -124,7 +124,11 @@ main {
 	transform: scale(1.05);
 	transition: all 1s ease
 }
-
+@media (max-height: 900px){
+	main {
+    	max-height: 770px;
+	}
+}
 @media (max-width: 1400px){
 	main {
     	max-height: 600px;
@@ -646,7 +650,7 @@ main {
 }
 /*РАЗДЕЛ ПОРТФОЛИО*/
 .body__portfolio {
-	margin: 50px 50px 50px 50px;
+	margin: 200px 50px 50px 50px;
 	display: flex;
 	justify-content: center; 
 	align-items: center;
