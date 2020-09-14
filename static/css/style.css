@@ -126,7 +126,7 @@ main {
 }
 @media (max-height: 900px){
 	main {
-    	max-height: 770px;
+    	max-height: 750px;
 	}
 }
 @media (max-width: 1400px){
