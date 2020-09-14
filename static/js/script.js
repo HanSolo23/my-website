@@ -28,6 +28,7 @@ var settings = () => {
 		backFirst.style.display = 'inline-block';
 		footerLinks.forEach(footerLink => footerLink.style.display = 'none');
 		body.style.background = 'black center / cover no-repeat';
+		footer.style.padding = '0px 50px 0px 50px';
 	} else if (window.location.href.indexOf('blog') > -1) {
 		header.style.display = 'none';
 		links.forEach(link => link.classList.add('display'));

@@ -3,7 +3,10 @@ html, body {
 }
 body {
 	background: white center / cover no-repeat;
-	
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	justify-content: space-between; 
 }
 main {
 	flex: 1 0 auto;
@@ -122,6 +125,11 @@ main {
 	transition: all 1s ease
 }
 
+@media (max-width: 1400px){
+	main {
+    	max-height: 600px;
+	}
+}
 @media (max-width: 1200px){
 	.header__name {
 		font-size: 16px;
@@ -130,7 +138,7 @@ main {
 		font-size: 16px;
 	}
 	main {
-    	max-height: 700px;
+    	max-height: 500px;
 	}
 }
 @media (max-width: 1050px){
@@ -141,7 +149,7 @@ main {
 		font-size: 13px;
 	}
 	main {
-    	max-height: 600px;
+    	max-height: 450px;
 	}
 }
 @media (max-width: 950px){/*верстка бургерного меню*/
@@ -638,11 +646,12 @@ main {
 }
 /*РАЗДЕЛ ПОРТФОЛИО*/
 .body__portfolio {
-	margin: 50px 50px 50px 50px;
+	margin: 200px 50px 50px 50px;
 	display: flex;
 	justify-content: center; 
 	align-items: center;
 	max-width: 100%;
+	max-height: 600px;
 }
 .container__portfolio {
 	max-width: 100%;
@@ -669,15 +678,16 @@ main {
 .arrows {
 	display: flex;
 	justify-content: space-between;
+	
 }
 .arrows .prev {
-	background: url('img/back.png') 0 0 / 100% no-repeat;
+	background: url('img/back.png') 0 0 / 90% no-repeat;
 	padding: 50px 50px 50px 50px;
 	transform: scale(1);
 	transition: all 1s ease 0s;
 }
 .arrows .next {
-	background: url('img/forward.png') 0 0 / 100% no-repeat;
+	background: url('img/forward.png') 0 0 / 90% no-repeat;
 	padding: 50px 50px 50px 50px;
 	transform: scale(1);
 	transition: all 1s ease 0s;
@@ -724,15 +734,42 @@ main {
 	.slider__item {
   		height: 400px;
 	}
+	.arrows .prev {
+		background: url('img/back.png') 0 0 / 85% no-repeat;
+	}
+	.arrows .next {
+		background: url('img/forward.png') 0 0 / 85% no-repeat;
+	}
+	.body__portfolio {
+		max-height: 500px;
+	}
 }
 @media (max-width: 1400px){
 	.slider__item {
   		height: 300px;
 	}
+	.arrows .prev {
+		background: url('img/back.png') 0 0 / 70% no-repeat;
+	}
+	.arrows .next {
+		background: url('img/forward.png') 0 0 / 70% no-repeat;
+	}
+	.body__portfolio {
+		max-height: 400px;
+	}
 }
 @media (max-width: 1200px){
 	.slider__item {
   		height: 250px;
+	}
+	.arrows .prev {
+		background: url('img/back.png') 0 0 / 55% no-repeat;
+	}
+	.arrows .next {
+		background: url('img/forward.png') 0 0 / 55% no-repeat;
+	}
+	.body__portfolio {
+		max-height: 300px;
 	}
 }
 /*РАЗДЕЛ БЛОГ*/
@@ -969,6 +1006,7 @@ main {
 .footer {
 	flex: 0 0 auto;
 }
+
 .footer img {
 	padding: 0px 15px 25px 0px;
 	transition: all 1s ease;
@@ -1036,4 +1074,34 @@ main {
 .back__fourth:hover {
 	transform: scale(1.05);
 	transition: all 1s ease;
+}
+@media (max-width: 1400px){
+	.back__first {
+		font-size: 14px;
+	}
+	.back__second {
+		font-size: 14px;
+	}
+	.back__third {
+		font-size: 14px;
+	}
+
+	.back__fourth {
+		font-size: 14px;
+	}
+}
+@media (max-width: 1200px){
+	.back__first {
+		font-size: 13px;
+	}
+	.back__second {
+		font-size: 13px;
+	}
+	.back__third {
+		font-size: 13px;
+	}
+
+	.back__fourth {
+		font-size: 13px;
+	}
 }
