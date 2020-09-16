@@ -56,7 +56,7 @@ main {
 .header {/*шапка будет зафиксирована*/
 	position: relative;
 	width: 100%;
-	top: 10px;
+	top: 15px;
 	left: 0;
 	z-index: 50;
 	flex: 1 0 auto;
@@ -125,7 +125,7 @@ main {
 }
 @media (max-width: 1800px){
 	main {
-		max-height: 770px;
+		max-height: 750px;
 	}
 	body {
     	transform: scale(0.95);
