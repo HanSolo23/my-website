@@ -124,11 +124,11 @@ main {
 	transition: all 1s ease
 }
 @media (max-width: 1800px){
-	/*main {
+	main {
 		max-height: 770px;
-	}*/
+	}
 	body {
-    	transform: scale(0.9);
+    	transform: scale(0.95);
 	}
 }
 @media (max-width: 1600px){
