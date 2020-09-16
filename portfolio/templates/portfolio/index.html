@@ -2,20 +2,18 @@
 {% load static %}
 {% block content %}
 <div class="body__portfolio">
-	<div class="container__portfolio">
-		<div class="portfolio">	
-			<div class="slider">
-				{% for image in images %}
-				<div class="slider__item">
-					<a href="{{ image.get_absolute_url }}"><img src="{{ image.body.url }}" alt="{{ uploadimg.title }}" class="media__element"></a>
-				</div>
-				{% endfor %}
+	<div class="portfolio">	
+		<div class="slider">
+			{% for image in images %}
+			<div class="slider__item">
+				<a href="{{ image.get_absolute_url }}"><img src="{{ image.body.url }}" alt="{{ uploadimg.title }}" class="media__element"></a>
 			</div>
+			{% endfor %}
 		</div>
-		<div class="container arrows">
-			<button class="prev"></button>
-			<button class="next"></button>
-		</div>
+	</div>
+	<div class="arrows">
+		<button class="prev"></button>
+		<button class="next"></button>
 	</div>
 </div>
 {% endblock %}
