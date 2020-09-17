@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, HttpResponseRedirect, get_object_or_404
 from .models import *
 from django.views.generic import View, CreateView
-from .forms import UploadImgForm, UploadVideoForm
+from .forms import UploadImgForm
 from django.urls import reverse_lazy, reverse
 from django.contrib.auth.mixins import LoginRequiredMixin
 
@@ -17,19 +17,6 @@ class PortfolioFotoDetail(LoginRequiredMixin, View):
     def get(self, request, slug):
         image = get_object_or_404(UploadImg, slug__iexact=slug)
         return render(request, 'portfolio/image.html', context={'image': image, 'admin_object': image, 'delete': True})
-
-
-def portfolio_video(request):
-    videos = UploadVideo.objects.all()
-    return render(request, 'portfolio/index_video.html', context={'videos': videos, 'vdo': True})
-
-
-class PortfolioVideoDetail(LoginRequiredMixin, View):
-    raise_exception = True
-
-    def get(self, request, slug):
-        video = get_object_or_404(UploadVideo, slug__iexact=slug)
-        return render(request, 'portfolio/video.html', context={'video': video, 'admin_object': video, 'delete': True})
 
 
 class UploadImage(LoginRequiredMixin, View):
@@ -58,31 +45,3 @@ class DeleteImage(LoginRequiredMixin, View):
         image = UploadImg.objects.get(slug__iexact=slug)
         image.delete()
         return redirect(reverse('portfolio_url'))
-
-
-class UploadVdo(LoginRequiredMixin, View):
-    raise_exception = True
-
-    def get(self, request):
-        form = UploadVideoForm()
-        return render(request, 'portfolio/upload_video.html', context={'form': form})
-
-    def post(self, request):
-        bound_form = UploadVideoForm(request.POST, request.FILES)
-        if bound_form.is_valid():
-            new_video = bound_form.save()
-            return redirect(reverse('portfolio_video_url'))
-        return render(request, 'portfolio/upload_video.html', context={'form': bound_form})
-
-
-class DeleteVdo(LoginRequiredMixin, View):
-    raise_exception = True
-
-    def get(self, request, slug):
-        video = UploadVideo.objects.get(slug__iexact=slug)
-        return render(request, 'portfolio/delete_video.html', context={'video': video})
-
-    def post(self, request, slug):
-        video = UploadVideo.objects.get(slug__iexact=slug)
-        video.delete()
-        return redirect(reverse('portfolio_video_url'))
