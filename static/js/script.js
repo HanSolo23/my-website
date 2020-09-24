@@ -20,20 +20,21 @@ var footerLinks = footer.querySelectorAll('.footer__link');
 
 var settings = () => {
 	if (window.location.href.indexOf('portfolio') > -1) {
-		header.classList.add('display');
-		links.forEach((link) => {
-			link.classList.add('display');
-		});
+		header.style.display = 'none';
 		backFirst.style.display = 'inline-block';
 		footerLinks.forEach(footerLink => footerLink.style.display = 'none');
 		body.style.background = 'black center / cover no-repeat';
 		footer.style.padding = '0px 50px 0px 50px';
 	} else if (window.location.href.indexOf('blog') > -1) {
 		header.style.display = 'none';
-		links.forEach(link => link.classList.add('display'));
 		backFirst.style.display = 'inline-block';
 		footerLinks.forEach(footerLink => footerLink.style.display = 'none');
 		body.style.background = 'black center / cover no-repeat';
+	} else if (window.location.href.indexOf('contacts') > -1) {
+		header.style.display = 'none';
+		backFirst.style.display = 'inline-block';
+		backFirst.style.color = 'black';
+		footerLinks.forEach(footerLink => footerLink.style.display = 'none');
 	};
 	if (!window.location.href.endsWith('portfolio/') && window.location.href.indexOf('portfolio') > -1) {
 		backFirst.style.display = 'none';

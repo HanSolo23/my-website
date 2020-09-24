@@ -85,9 +85,6 @@ main {
 	transform: scale(1);
 	transition: all 1s ease
 }
-.display {
-	display: none;
-}
 .header__name h1{
 	font-family: 'Montserrat', sans-serif;
 }
@@ -858,6 +855,43 @@ main {
 	font-family: 'Montserrat', sans-serif;
 	background: url('img/code8.jpg') 0 0 / 100% no-repeat;
 }
+/*РАЗДЕЛ КОНТАКТЫ*/
+.contacts {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+
+}
+.first__part {
+	background: url('img/code.jpg') center / 100% no-repeat;
+	flex: 1 1 65%;
+	position: relative;
+}
+.first__part p {
+	position: absolute;
+	top: 92%;
+	left: 75%;
+	font-family: 'Montserrat', sans-serif;
+	color: white;
+	font-size: 2vw;
+}
+.second__part {
+	background: white	0 0 / 100% no-repeat;
+	flex: 1 1 35%;
+	position: relative;
+}
+.second__part div {
+	position: absolute;
+	top: 10%;
+	left: 20%;
+	font-family: 'Montserrat', sans-serif;
+	color: black;
+	font-size: 1vw;
+}
+.second__part div p {
+	padding: 3% 0px 3% 0px;
+}
 /*РАЗДЕЛ ЗАГРУЗКА ФОТО  И ВИДЕО В ПОРТФОЛИО И СОЗДАНИЕ ЗАПИСЕЙ В БЛОГЕ*/
 .form__container {
 	max-width: 400px;
@@ -1090,25 +1124,47 @@ main {
 	transform: scale(1.05);
 	transition: all 1s ease;
 }
-@media (max-width: 1400px){
+@media (max-width: 1600px){
 	.back__first {
-		font-size: 14px;
+		font-size: 13px;
 	}
 	.back__second {
-		font-size: 14px;
+		font-size: 13px;
 	}
 	.back__third {
-		font-size: 14px;
+		font-size: 13px;
+	}
+}
+@media (max-width: 1400px){
+	.back__first {
+		font-size: 12px;
+	}
+	.back__second {
+		font-size: 12px;
+	}
+	.back__third {
+		font-size: 12px;
 	}
 }
 @media (max-width: 1200px){
 	.back__first {
-		font-size: 13px;
+		font-size: 11px;
 	}
 	.back__second {
-		font-size: 13px;
+		font-size: 11px;
 	}
 	.back__third {
-		font-size: 13px;
+		font-size: 11px;
+	}
+}
+@media (max-width: 1050px){
+	.back__first {
+		font-size: 10px;
+	}
+	.back__second {
+		font-size: 10px;
+	}
+	.back__third {
+		font-size: 10px;
 	}
 }
