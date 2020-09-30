@@ -61,56 +61,79 @@ var settings = () => {
 
 settings()
 
-if (window.location.href.indexOf('contacts') > -1) {
-	var contactsOne = body.querySelector('.contacts_1');
-	var contactsTwo = body.querySelector('.contacts_2');
-	var contactsThree = body.querySelector('.contacts_3');
-	var paragraphs = contactsTwo.querySelectorAll('p');
-};
+var contactsOne = body.querySelector('.contacts_1');
+var contactsThree = body.querySelector('.contacts_3');
+var paragraphs = body.querySelectorAll('p');
 
-window.onload = () => {
-	var preloader = document.querySelector('.preloader');
+
+window.onload = show;
+
+function show() {
+	var preloader = body.querySelector('.preloader');
 	preloader.style.display = 'none';
 	if (window.location.href.indexOf('contacts') > -1) {
 		paragraphs.forEach(paragraph => paragraph.style.transform = 'translateX(0px)');
 		contactsOne.style.transform = 'translateX(0px)';
 		contactsThree.style.transform = 'translateX(0px)';
 	};
+	let row = 0;
+	var mainSlider = body.querySelector('.slider');
+	var sliderItems = body.querySelectorAll('.slider__item');
+	var arrows = body.querySelector('.arrows');
+	var previous = arrows.querySelector('.prev');
+	var next = arrows.querySelector('.next');
+	var container = body.querySelector('.portfolio');
+	var itemWidth = container.clientWidth;
+	var constant = 3;
+	console.log(sliderItems.length);
+	console.log(itemWidth);
+	var bla = [];
+	var blaBla = 0;
+	sliderItems.forEach(sliderItem => bla.push(sliderItem.clientWidth));
+	bla.forEach(i => blaBla += i);
+	console.log(bla);
+	console.log(blaBla);
+	var movePosition = () => {
+		return Math.round(itemWidth / constant);
+	};
+
+	var position = () => {
+		mainSlider.style.transform = `translateX(${row}px)`;
+	};
+
+	var disableArrows = () => {
+		previous.disabled = row === 0;
+		next.disabled = row <= -(blaBla - (sliderItems[0].clientWidth + sliderItems[1].clientWidth + sliderItems[2].clientWidth));
+	};
+
+	next.addEventListener('click', () => {
+		row -= movePosition();
+		position();
+		disableArrows();
+	});
+
+	previous.addEventListener('click', () => {
+		row += movePosition();
+		position();
+		disableArrows();
+	});
+
+
+
+	disableArrows();
 };
+
 // Portfolio slider
-let row = 0;
-var mainSlider = document.querySelector('.slider');
-var sliderItems = mainSlider.querySelectorAll('.slider__item');
-var arrows = document.querySelector('.arrows');
-var previous = arrows.querySelector('.prev');
-var next = arrows.querySelector('.next');
-var container = document.querySelector('.portfolio');
-var itemWidth = container.clientWidth;
-var constant = 3;
-console.log(itemWidth)
-var movePosition = () => {
-	return Math.round(itemWidth / constant);
-};
 
-next.addEventListener('click', () => {
-	row -= movePosition();
-	position();
-	disableArrows();
-});
 
-previous.addEventListener('click', () => {
-	row += movePosition();
-	position();
-	disableArrows();
-});
 
-var position = () => {
-	mainSlider.style.transform = `translateX(${row}px)`;
-};
 
-var disableArrows = () => {
-	previous.disabled = row === 0;
-	/*next.disabled = row <= -(sliderItems.length - (Math.round((sliderItems.length * movePosition() / itemWidth) - constant))) * movePosition();*/
-};
 
-disableArrows();
+
+
+
+
+
+
+
+
