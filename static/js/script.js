@@ -85,14 +85,12 @@ function show() {
 	var container = body.querySelector('.portfolio');
 	var itemWidth = container.clientWidth;
 	var constant = 3;
-	console.log(sliderItems.length);
-	console.log(itemWidth);
-	var bla = [];
-	var blaBla = 0;
-	sliderItems.forEach(sliderItem => bla.push(sliderItem.clientWidth));
-	bla.forEach(i => blaBla += i);
-	console.log(bla);
-	console.log(blaBla);
+	
+	var widthOfImages = [];
+	var totalWidthOfImages = 0;
+	sliderItems.forEach(sliderItem => widthOfImages.push(sliderItem.clientWidth));
+	widthOfImages.forEach(i => totalWidthOfImages += i);
+	
 	var movePosition = () => {
 		return Math.round(itemWidth / constant);
 	};
@@ -103,7 +101,7 @@ function show() {
 
 	var disableArrows = () => {
 		previous.disabled = row === 0;
-		next.disabled = row <= -(blaBla - (sliderItems[0].clientWidth + sliderItems[1].clientWidth + sliderItems[2].clientWidth));
+		next.disabled = row <= -(totalWidthOfImages - itemWidth);
 	};
 
 	next.addEventListener('click', () => {

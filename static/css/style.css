@@ -802,7 +802,6 @@ main {
 	max-width: 1700px;
 	display: flex;
 	justify-content: center; 
-	align-items: center;
 	flex-wrap: wrap;
 	font-family: 'Montserrat', sans-serif;
 }
@@ -817,7 +816,8 @@ main {
 	flex-wrap: wrap;
 	justify-content: space-around;
 	color: white;
-	background: url('img/code8.jpg') 0 0 / 100% no-repeat;
+	background: url('img/code8.jpg') 0 0 / cover no-repeat;
+
 }
 .read__post {
 	padding: 20px 20px 20px 20px;
