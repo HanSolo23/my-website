@@ -53,6 +53,7 @@
 		<a href="/admin" class="button__admin"><button>Admin</button></a>
 		<a href="{% url 'upload_image_url' %}" class="button__upload" style="{% if img %}display:block{% endif %}"><button>Upload</button></a>
 		<a href="{% url 'post_create_url' %}" class="button__upload" style="{% if pst %}display:block{% endif %}"><button>Create</button></a>
+		<a href="{{ admin_object.get_update_url }}" class="button__edit" style="{% if edit %}display:block{% endif %}"><button>Edit</button></a>
 		<a href="{{ admin_object.get_delete_url }}" class="button__delete" style="{% if delete %}display:block{% endif %}"><button>Delete</button></a>
 	</div>
 	{% endif %}
@@ -62,6 +63,7 @@
 		<a href="{% url 'main' %}" class="back__first"><h1>Back</h1></a>
 		<a href="{% url 'portfolio_url' %}" class="back__second"><h1>Back</h1></a>
 		<a href="{% url 'blog_url' %}" class="back__third"><h1>Back</h1></a>
+		<a href="{{ post.get_absolute_url }}" class="back__fourth"><h1>Back</h1></a>
 		<a href="https://t.me/HanSolo23" class="footer__link">
 			<img src="{% static 'img/icon6.png' %}" alt="">
 		</a>

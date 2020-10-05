@@ -16,6 +16,7 @@ var footer = body.querySelector('.footer');
 var backFirst = footer.querySelector('.back__first');
 var backSecond = footer.querySelector('.back__second');
 var backThird = footer.querySelector('.back__third');
+var backFourth = footer.querySelector('.back__fourth');
 var footerLinks = footer.querySelectorAll('.footer__link');
 
 var settings = () => {
@@ -51,6 +52,11 @@ var settings = () => {
 	} else if (window.location.href.indexOf('delete') > -1) {
 		body.style.background = 'white center / cover no-repeat';
 		backSecond.style.display = 'none';
+	} else if (window.location.href.indexOf('update') > -1) {
+		body.style.background = 'white center / cover no-repeat';
+		backThird.style.display = 'none';
+		backFourth.style.display = 'inline-block';
+		backFourth.style.color = 'black';
 	} else if (window.location.href.indexOf('post/create') > -1) {
 		body.style.background = 'white center / cover no-repeat';
 		backFirst.style.display = 'none';
@@ -76,6 +82,7 @@ function show() {
 		contactsOne.style.transform = 'translateX(0px)';
 		contactsThree.style.transform = 'translateX(0px)';
 	};
+	// Portfolio slider
 	let row = 0;
 	var mainSlider = body.querySelector('.slider');
 	var sliderItems = body.querySelectorAll('.slider__item');
@@ -121,7 +128,7 @@ function show() {
 	disableArrows();
 };
 
-// Portfolio slider
+
 
 
 

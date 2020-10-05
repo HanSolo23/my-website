@@ -15,7 +15,4 @@ class PostForm(forms.ModelForm):
 
     def clean_title(self):
         new_title = self.cleaned_data['title']
-
-        if Post.objects.filter(title__iexact=new_title).count():
-            raise ValidationError('Title must be unique. We have "{}" title already'.format(new_title))
         return new_title

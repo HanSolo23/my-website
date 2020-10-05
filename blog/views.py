@@ -12,7 +12,7 @@ def posts_list(request):
 
 def post_detail(request, slug):
     post = get_object_or_404(Post, slug__iexact=slug)
-    return render(request, 'blog/post.html', context={'post' : post, 'admin_object' : post, 'delete' : True})
+    return render(request, 'blog/post.html', context={'post' : post, 'admin_object' : post, 'delete' : True, 'edit' : True})
 
 
 class PostCreate(LoginRequiredMixin, View):
@@ -24,12 +24,28 @@ class PostCreate(LoginRequiredMixin, View):
 
     def post(self, request):
         bound_form = PostForm(request.POST)
+
         if bound_form.is_valid():
             new_post = bound_form.save()
             return redirect(reverse('blog_url'))
         return render(request, 'blog/post_create.html', context={'form' : bound_form})
 
+class PostUpdate(LoginRequiredMixin, View):
+    raise_exception = True
 
+    def get(self, request, slug):
+        post = Post.objects.get(slug__iexact=slug)
+        bound_form = PostForm(instance=post)
+        return render(request, 'blog/post_update.html', context={'form' : bound_form, 'post' : post})
+
+    def post(self, request, slug):
+        post = Post.objects.get(slug__iexact=slug)
+        bound_form = PostForm(request.POST, instance=post)
+
+        if bound_form.is_valid():
+            new_post = bound_form.save()
+            return redirect(new_post)
+        return render(request, 'blog/post_update.html', context={'form' : bound_form, 'post' : post})
 
 class PostDelete(LoginRequiredMixin, View):
     raise_exception = True

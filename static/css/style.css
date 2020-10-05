@@ -1020,6 +1020,25 @@ main {
 	outline: none;
   	box-shadow: 0 0 0 4px #cbd6ee;
 }
+.admin__panel .button__edit {
+	display: none;
+}
+.admin__panel .button__edit button {
+	width: 100px;
+	border: 0;
+  	border-radius: 5px;
+  	background: #0000ff;
+  	color: #fff;
+  	padding: 8px 16px;
+  	font-size: 16px;
+}
+.admin__panel .button__edit button:hover {
+	opacity: 0.6;
+}
+.admin__panel .button__edit button:focus {
+	outline: none;
+  	box-shadow: 0 0 0 4px #cbd6ee;
+}
 .admin__panel .button__delete {
 	display: none;
 }
@@ -1140,6 +1159,20 @@ main {
 	transform: scale(1.05);
 	transition: all 1s ease;
 }
+.back__fourth {
+	margin: 0px 0px 61px 0px;
+	display: none;
+	text-decoration: none;
+	outline: none;
+	color: white;
+	font-family: 'Montserrat', sans-serif;
+	transform: scale(1);
+	transition: all 1s ease;
+}
+.back__fourth:hover {
+	transform: scale(1.05);
+	transition: all 1s ease;
+}
 @media (max-width: 1600px){
 	.back__first {
 		font-size: 13px;
@@ -1148,6 +1181,9 @@ main {
 		font-size: 13px;
 	}
 	.back__third {
+		font-size: 13px;
+	}
+	.back__fourth {
 		font-size: 13px;
 	}
 }
@@ -1161,6 +1197,9 @@ main {
 	.back__third {
 		font-size: 12px;
 	}
+	.back__fourth {
+		font-size: 12px;
+	}
 }
 @media (max-width: 1200px){
 	.back__first {
@@ -1172,6 +1211,9 @@ main {
 	.back__third {
 		font-size: 11px;
 	}
+	.back__fourth {
+		font-size: 11px;
+	}
 }
 @media (max-width: 1050px){
 	.back__first {
@@ -1181,6 +1223,9 @@ main {
 		font-size: 10px;
 	}
 	.back__third {
+		font-size: 10px;
+	}
+	.back__fourth {
 		font-size: 10px;
 	}
 }
