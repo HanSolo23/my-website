@@ -81,18 +81,17 @@ window.onload = show;
 function show() {
 	var preloader = body.querySelector('.preloader');
 	preloader.style.display = 'none';
+	if (window.location.href.indexOf('contacts') > -1) {
+		paragraphs.forEach(paragraph => paragraph.style.transform = 'translateX(0px)');
+		backgroundThree.style.transform = 'translateX(0px)';
+		backgroundFour.style.transform = 'translateX(0px)';
+	};
 	lastLife.style.transform = 'scale(1) translateY(0px)';
 	newLife1.style.transform = 'scale(1) translateY(0px)';
 	newLife2.style.transform = 'scale(1) translateY(0px)';
 	headerName.style.transform = 'scale(1) translateY(0px)';
 	headerMenu.style.transform = 'scale(1) translateY(0px)';
 	footerImgs.forEach(footerImg => footerImg.style.transform = 'translateY(0px)');
-	if (window.location.href.indexOf('contacts') > -1) {
-		paragraphs.forEach(paragraph => paragraph.style.transform = 'translateX(0px)');
-		backgroundThree.style.transform = 'translateX(0px)';
-		backgroundFour.style.transform = 'translateX(0px)';
-	};
-	
 	// Portfolio slider
 	let row = 0;
 	var mainSlider = body.querySelector('.slider');
