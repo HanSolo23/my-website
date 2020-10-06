@@ -61,6 +61,7 @@ main {
 	z-index: 50;
 	flex: 1 0 auto;
 	max-height: 50px;
+	overflow: hidden;
 }
 .header:before {/*создается шапка*/
 	content: '';
@@ -82,8 +83,8 @@ main {
 	color: #282826;
 	position: relative;
 	z-index: 3;
-	transform: scale(1);
-	transition: all 1s ease
+	transform: scale(1) translateX(-1500px);
+	transition: all 1s ease 0s;
 }
 .header__name h1{
 	font-family: 'Montserrat', sans-serif;
@@ -92,7 +93,8 @@ main {
 	display: none;
 }
 .header__menu {
-	
+	transform: scale(1) translateX(1500px);
+	transition: all 1s ease 0s;
 }
 .header__list {
 	display: flex;
@@ -320,11 +322,12 @@ main {
 	display: flex;
 	position: relative;
 	margin: 50px 50px 50px 50px;
+	overflow: hidden;
 }
 .last__life {
 	position: relative;
 	flex: 1 1 50%;
-	transform: scale(1);
+	transform: scale(1) translateX(-1500px);
 	transition: all 1s ease 0s;
 	margin-right: 15px;
 }
@@ -370,7 +373,7 @@ main {
 }
 .new__life_1 {
 	position: relative;
-	transform: scale(1);
+	transform: scale(1) translateY(-1500px);
 	transition: all 1s ease 0s;
 	margin-bottom: 15px;
 }
@@ -411,7 +414,7 @@ main {
 }
 .new__life_2 {
 	position: relative;
-	transform: scale(1);
+	transform: scale(1) translateY(1500px);
 	transition: all 1s ease 0s;
 }
 .text_3 {
@@ -1013,15 +1016,21 @@ main {
 }
 .footer {
 	flex: 0 0 auto;
+
+	overflow: hidden;
 }
 
 .footer img {
 	padding: 0px 15px 25px 0px;
+	transform: translateY(1500px);
 	transition: all 1s ease;
 }
 .footer a {
 	text-decoration: none;
 	outline: none;
+}
+.footer__link {
+	
 }
 .footer__link:hover img {
 	transform: translateY(-5px);

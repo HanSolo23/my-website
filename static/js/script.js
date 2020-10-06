@@ -18,6 +18,7 @@ var backSecond = footer.querySelector('.back__second');
 var backThird = footer.querySelector('.back__third');
 var backFourth = footer.querySelector('.back__fourth');
 var footerLinks = footer.querySelectorAll('.footer__link');
+var footerImgs = footer.querySelectorAll('img');
 var background = body.querySelector('.background');
 
 var settings = () => {
@@ -71,18 +72,27 @@ settings()
 var backgroundThree = body.querySelector('.background_3');
 var backgroundFour = body.querySelector('.background_4');
 var paragraphs = body.querySelectorAll('p');
-
+var lastLife = body.querySelector('.last__life');
+var newLife1 = body.querySelector('.new__life_1');
+var newLife2 = body.querySelector('.new__life_2');
 
 window.onload = show;
 
 function show() {
 	var preloader = body.querySelector('.preloader');
 	preloader.style.display = 'none';
+	lastLife.style.transform = 'scale(1) translateY(0px)';
+	newLife1.style.transform = 'scale(1) translateY(0px)';
+	newLife2.style.transform = 'scale(1) translateY(0px)';
+	headerName.style.transform = 'scale(1) translateY(0px)';
+	headerMenu.style.transform = 'scale(1) translateY(0px)';
+	footerImgs.forEach(footerImg => footerImg.style.transform = 'translateY(0px)');
 	if (window.location.href.indexOf('contacts') > -1) {
 		paragraphs.forEach(paragraph => paragraph.style.transform = 'translateX(0px)');
 		backgroundThree.style.transform = 'translateX(0px)';
 		backgroundFour.style.transform = 'translateX(0px)';
 	};
+	
 	// Portfolio slider
 	let row = 0;
 	var mainSlider = body.querySelector('.slider');
