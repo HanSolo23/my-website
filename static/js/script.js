@@ -18,6 +18,7 @@ var backSecond = footer.querySelector('.back__second');
 var backThird = footer.querySelector('.back__third');
 var backFourth = footer.querySelector('.back__fourth');
 var footerLinks = footer.querySelectorAll('.footer__link');
+var background = body.querySelector('.background');
 
 var settings = () => {
 	if (window.location.href.indexOf('portfolio') > -1) {
@@ -34,10 +35,10 @@ var settings = () => {
 	} else if (window.location.href.indexOf('contacts') > -1) {
 		header.style.display = 'none';
 		backFirst.style.display = 'inline-block';
-		body.style.background = 'black center / cover no-repeat';
+		body.style.transform = 'scale(1)';
+		background.style.display = 'grid';
 		backFirst.style.color = 'white';
 		footerLinks.forEach(footerLink => footerLink.style.display = 'none');
-
 	};
 	if (!window.location.href.endsWith('portfolio/') && window.location.href.indexOf('portfolio') > -1) {
 		backFirst.style.display = 'none';
@@ -67,8 +68,8 @@ var settings = () => {
 
 settings()
 
-var contactsOne = body.querySelector('.contacts_1');
-var contactsThree = body.querySelector('.contacts_3');
+var backgroundThree = body.querySelector('.background_3');
+var backgroundFour = body.querySelector('.background_4');
 var paragraphs = body.querySelectorAll('p');
 
 
@@ -79,8 +80,8 @@ function show() {
 	preloader.style.display = 'none';
 	if (window.location.href.indexOf('contacts') > -1) {
 		paragraphs.forEach(paragraph => paragraph.style.transform = 'translateX(0px)');
-		contactsOne.style.transform = 'translateX(0px)';
-		contactsThree.style.transform = 'translateX(0px)';
+		backgroundThree.style.transform = 'translateX(0px)';
+		backgroundFour.style.transform = 'translateX(0px)';
 	};
 	// Portfolio slider
 	let row = 0;
