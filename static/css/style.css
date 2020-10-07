@@ -589,13 +589,13 @@ main {
 	transition: all 1s ease;
 }
 .arrows .prev {
-	background: url('img/sql.png') 0 0 / 70% no-repeat;
+	background: url('img/bck.png') 0 0 / 70% no-repeat;
 	padding: 50px 50px 50px 50px;
 	transform: scale(1);
 	transition: all 1s ease 0s;
 }
 .arrows .next {
-	background: url('img/sq.png') 0 0 / 70% no-repeat;
+	background: url('img/frwd.png') 0 0 / 70% no-repeat;
 	padding: 50px 50px 50px 50px;
 	transform: scale(1);
 	transition: all 1s ease 0s;
