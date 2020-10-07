@@ -453,10 +453,6 @@ main {
 .new__life_2 img {
 	max-width: 100%;
 }
-.last__life:hover {
-	transform: translateX(-30px) scale(1.05);
-	transition: all 1s ease 0s;
-}
 .last__life:hover .text_1 {
 	opacity: 0;
 	transition: all 1s ease 0s;
@@ -465,21 +461,12 @@ main {
 	opacity: 1;
 	transition: all 1s ease 0s;
 }
-
-.new__life_1:hover {
-	transform: translate(15px, -15px) scale(1.05);
-	transition: all 1s ease 0s;
-}
 .new__life_1:hover .text_2 {
 	opacity: 0;
 	transition: all 1s ease 0s;
 }
 .new__life_1:hover .story_2 {
 	opacity: 1;
-	transition: all 1s ease 0s;
-}
-.new__life_2:hover {
-	transform: translate(15px, 15px) scale(1.05);
 	transition: all 1s ease 0s;
 }
 .new__life_2:hover .text_3 {
@@ -570,9 +557,12 @@ main {
 .body__portfolio {
 	max-width: 100%;
 	padding: 0px 50px 0px 50px;
+	
 }
 .portfolio {
 	overflow: hidden;
+	transform: translateX(-1500px);
+	transition: all 1s ease 0s;
 }
 .slider {
 	display: flex;
@@ -595,7 +585,8 @@ main {
 	max-width: 1200px;
 	margin: 0px auto;
 	padding: 0px 160px;
-
+	transform: translateY(1500px);
+	transition: all 1s ease;
 }
 .arrows .prev {
 	background: url('img/sql.png') 0 0 / 70% no-repeat;
@@ -681,6 +672,7 @@ main {
 	justify-content: center; 
 	flex-wrap: wrap;
 	font-family: 'Montserrat', sans-serif;
+	overflow: hidden;
 }
 .blog {
 	width: 400px;
@@ -694,7 +686,6 @@ main {
 	justify-content: space-around;
 	color: white;
 	background: url('img/code8.jpg') 0 0 / cover no-repeat;
-
 }
 .read__post {
 	padding: 20px 20px 20px 20px;
@@ -719,6 +710,9 @@ main {
 	transform: scale(1.05);
 	transition: all 1s ease 0s;
 }
+.container__post {
+	overflow: hidden;
+}
 .post {
 	margin: 40px 40px 40px 40px;
 	padding: 20px 20px 20px 20px;
@@ -731,6 +725,21 @@ main {
 	color: white;
 	font-family: 'Montserrat', sans-serif;
 	background: url('img/code8.jpg') 0 0 / 100% no-repeat;
+	transform: translateX(1500px);
+	transition: all 1s ease 0s;
+	
+}
+.container__blog .blog:nth-child(1) {
+	transform: translateY(-1500px);
+	transition: all 1s ease 0s;
+}
+.container__blog .blog:nth-child(2) {
+	transform: translateY(1500px);
+	transition: all 1s ease 0s;
+}
+.container__blog .blog:nth-child(3) {
+	transform: translateX(1500px);
+	transition: all 1s ease 0s;
 }
 /*РАЗДЕЛ КОНТАКТЫ*/
 .background {
@@ -743,8 +752,6 @@ main {
 }
 .background_3 {
 	background: url('img/left.jpg') 0 0 / cover no-repeat;
-
-	
 	transform: translateX(1500px);
 	transition: all 1s ease 0s;
 	
@@ -779,29 +786,11 @@ main {
 	overflow: hidden;
 	
 }
-/*.contacts_1 {
-	background: url('img/img1.jpg') 0 0 / 100% no-repeat;
-	width: 30%;
-	height: 40%;
-	align-self: flex-start;
-	margin: 95px 0px 0px 10px;
-	transform: translateX(1500px);
-	transition: all 1s ease 0s;
-}*/
 .contacts_2 {
 	font-family: 'Montserrat', sans-serif;
 	font-size: 0.9vw;
 	color: white;
 }
-/*.contacts_3 {
-	background: url('img/img2.jpg') 0 0 / 100% no-repeat;
-	width: 30%;
-	height: 40%;
-	align-self: flex-end;
-	margin: 0px 10px 0px 0px;
-	transform: translateX(-1500px);
-	transition: all 1s ease 0s;
-}*/
 .contacts_2 p {
 	padding: 3% 0px 3% 0px;
 }
@@ -1028,6 +1017,8 @@ main {
 .footer a {
 	text-decoration: none;
 	outline: none;
+	transform: translateX(-1500px);
+	transition: all 1s ease;
 }
 .footer__link {
 	

@@ -1,6 +1,7 @@
 {% extends 'blog/base_blog.html' %}
 {% load static %}
 {% block content %}
+<div class="container__post">
 	<div class="post">
 		<h1 class="post__title">
 			{{ post.title }}
@@ -9,4 +10,5 @@
 			{{ post.body }}
 		</p>
 	</div>
+</div>
 {% endblock %}
