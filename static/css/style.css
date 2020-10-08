@@ -2,10 +2,8 @@ html, body {
 	height: 100%;
 }
 body {
-	
 	display: flex;
 	flex-direction: column;
-	height: 100%;
 	justify-content: space-between;
 }
 main {
@@ -51,11 +49,9 @@ main {
   	--delay: 0s;
   	animation: dots 1s var(--delay) infinite ease-in;
 }
-/*ШАПКА САЙТА И ТИТУЛЬНАЯ СТРАНИЦА*/
-
-.header {/*шапка будет зафиксирована*/
+/*HEADER*/
+.header {
 	position: relative;
-	width: 100%;
 	top: 15px;
 	left: 0;
 	z-index: 50;
@@ -63,20 +59,12 @@ main {
 	max-height: 50px;
 	overflow: hidden;
 }
-.header:before {/*создается шапка*/
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-color: none;
-}
-.header__body {/*распределение контента в шапке*/
+.header__body {
 	position: relative;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	font-family: 'Montserrat', sans-serif;
 }
 .header__name {
 	text-decoration: none;
@@ -86,12 +74,6 @@ main {
 	transform: scale(1) translateX(-1500px);
 	transition: all 1s ease 0s;
 }
-.header__name h1{
-	font-family: 'Montserrat', sans-serif;
-}
-.header__burger {
-	display: none;
-}
 .header__menu {
 	transform: scale(1) translateX(1500px);
 	transition: all 1s ease 0s;
@@ -100,19 +82,14 @@ main {
 	display: flex;
 	position: relative;
 }
-.header__list li {
+.header__list .header__link {
 	list-style: none;
 	margin: 0px 0px 0px 20px;
-}
-.header__link {
-	transform: scale(1) translateZ(0);  
-	transition: all 1s ease
 }
 .link {
 	color: #282826;
 	text-decoration: none;
 	outline: none;
-	font-family: 'Montserrat', sans-serif;
 }
 .header__link:hover {
 	transform: scale(1.05);
@@ -123,11 +100,11 @@ main {
 	transition: all 1s ease
 }
 @media (max-width: 1800px) {
-	main {
-		max-height: 750px;
-	}
 	body {
     	transform: scale(0.95);
+	}
+	main {
+		max-height: 750px;
 	}
 	.preloader {
 		transform: scale(1.1);
@@ -156,12 +133,6 @@ main {
 	}
 }
 @media (max-width: 1200px) {
-	.header__name {
-		font-size: 16px;
-	}
-	.header__link {
-		font-size: 16px;
-	}
 	body {
     	transform: scale(0.7);
 	}
@@ -171,14 +142,14 @@ main {
 	.preloader {
 		transform: scale(1.6);
 	}
-}
-@media (max-width: 1050px) {
 	.header__name {
-		font-size: 13px;
+		font-size: 16px;
 	}
 	.header__link {
-		font-size: 13px;
+		font-size: 16px;
 	}
+}
+@media (max-width: 1050px) {
 	body {
     	transform: scale(0.6);
 	}
@@ -188,135 +159,16 @@ main {
 	.preloader {
 		transform: scale(1.8);
 	}
-}
-@media (max-width: 950px) {/*верстка бургерного меню*/
-	body.lock {
-		overflow: hidden;
-	}
-	.header__body {
-		height: 50px;
-	}
 	.header__name {
-		font-size: 1.5vw;
-	}
-	.header__burger {
-		display: block;
-		position: relative;
-		width: 30px;
-		height: 20px;
-		z-index: 3;
-	}
-	.header__burger span {
-		background-color: #ac987f;
-		position: absolute;
-		width: 100%;
-		height: 2px;
-		left:0;
-		top: 9px;
-		transition: all 0.3s ease 0s;
-	}
-	.header__burger:before,
-	.header__burger:after {
-		content: '';
-		background-color: #ac987f;
-		position: absolute;
-		width: 100%;
-		height: 2px;
-		left:0;
-		transition: all 0.3s ease 0s;
-	}
-	.header__burger:before {
-		top: 0;
-	}
-	.header__burger:after {
-		bottom: 0;
-	}
-	.header__burger.active:before {
-		transform: rotate(45deg);
-		top: 9px;
-	}
-	.header__burger.active:after {
-		transform: rotate(-45deg);
-		bottom: 9px;
-	}
-	.header__burger.active span {
-		transform: scale(0);
-	}
-	.header__menu {
-		position: fixed;
-		top: -150%;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background: rgba(39,39,39,0.8);
-		padding: 70px 10px 20px 10px;
-		transition: all 0.3s ease 0s;
-		overflow: auto;
-	}
-	.header__menu.active {
-		top: 0;
-	}
-	.header__list {
-		flex-direction: column;
-		align-items: center;
-	}
-	.header__list li{
-		margin: 0px 0px 20px 0px;
+		font-size: 13px;
 	}
 	.header__link {
-		color: #fff;
-		font-family: 'Montserrat', sans-serif;
+		font-size: 13px;
 	}
 }
-
-@media (max-width: 600px) {
-	.container {
-		padding: 0px 50px;
-	}
-	.header__body {
-		height: 30px;
-	}
-	.header__burger {
-		width: 20px;
-		height: 10px;
-		z-index: 3;
-	}
-	.header__burger span {
-		height: 1px;
-		top: 4.45px;
-	}
-	.header__burger:before,
-	.header__burger:after {
-		height: 1px;
-		left:0;
-	}
-	.header__burger:before {
-		top: 0;
-	}
-	.header__burger:after {
-		bottom: 0;
-	}
-	.header__burger.active:before {
-		top: 4.5px;
-	}
-	.header__burger.active:after {
-		bottom: 4.5px;
-	}
-	.header__menu {
-		padding: 50px 10px 20px 10px;
-	}
-}
-
-@media (max-width: 360px) {
-	.header__body {
-		height: 25px;
-	}
-}
-
-/*РАЗДЕЛ ГЛАВНАЯ СТРАНИЦА*/
+/*MAIN*/
 .container_2 {
 	max-width: 1700px;
-	
 }
 .main__page {
 	display: flex;
@@ -326,10 +178,10 @@ main {
 }
 .last__life {
 	position: relative;
+	margin-right: 15px;
 	flex: 1 1 50%;
 	transform: scale(1) translateX(-1500px);
 	transition: all 1s ease 0s;
-	margin-right: 15px;
 }
 .last__life img {
 	max-width: 100%;
@@ -342,21 +194,29 @@ main {
     transform: translate(-50%, -50%);
 	font-family: 'Montserrat', sans-serif;
 	color: white;
+	font-size: 0.85vw;
 	padding: 15px;
 	opacity: 1;
-	background: rgb(0, 0, 0, 0.65);
+	background: linear-gradient(to right, 
+		rgba(0, 0, 0, 0.3), 
+		rgba(0, 0, 0, 0.8) 20%, 
+		rgba(0, 0, 0, 0.8) 80%, 
+		rgba(0, 0, 0, 0.3));
 	transition: all 2s ease 0s;
-	font-size: 0.85vw;
 }
 .story_1 {
-	position: absolute;
 	max-width: 75%;
+	position: absolute;
 	top: 50%;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
-    background: rgb(0, 0, 0, 0.65);
     opacity: 0;
+    background: linear-gradient(to right, 
+    	rgba(0, 0, 0, 0.3), 
+    	rgba(0, 0, 0, 0.8) 20%, 
+    	rgba(0, 0, 0, 0.8) 80%, 
+    	rgba(0, 0, 0, 0.3));
     transition: all 2s ease 0s;
 }
 .story_1 p {
@@ -373,9 +233,9 @@ main {
 }
 .new__life_1 {
 	position: relative;
+	margin-bottom: 15px;
 	transform: scale(1) translateY(-1500px);
 	transition: all 1s ease 0s;
-	margin-bottom: 15px;
 }
 .text_2 {
 	position: absolute;
@@ -385,21 +245,29 @@ main {
     transform: translate(-50%, -50%);
 	font-family: 'Montserrat', sans-serif;
 	color: white;
+	font-size: 0.85vw;
 	padding: 5px;
 	opacity: 1;
-	background: rgb(0, 0, 0, 0.65);
+	background: linear-gradient(to right, 
+		rgba(0, 0, 0, 0.3), 
+		rgba(0, 0, 0, 0.8) 20%, 
+		rgba(0, 0, 0, 0.8) 80%, 
+		rgba(0, 0, 0, 0.3));
 	transition: all 2s ease 0s;
-	font-size: 0.85vw;
 }
 .story_2 {
-	position: absolute;
 	max-width: 75%;
+	position: absolute;
 	top: 50%;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
-	background: rgb(0, 0, 0, 0.65);
     opacity: 0;
+	background: linear-gradient(to right, 
+		rgba(0, 0, 0, 0.3), 
+		rgba(0, 0, 0, 0.8) 20%, 
+		rgba(0, 0, 0, 0.8) 80%, 
+		rgba(0, 0, 0, 0.3));
     transition: all 2s ease 0s;
 }
 .story_2 p {
@@ -425,21 +293,29 @@ main {
     transform: translate(-50%, -50%);
 	font-family: 'Montserrat', sans-serif;
 	color: white;
+	font-size: 0.85vw;
 	padding: 5px;
 	opacity: 1;
-	background: rgb(0, 0, 0, 0.65);
+	background: linear-gradient(to right, 
+		rgba(0, 0, 0, 0.3), 
+		rgba(0, 0, 0, 0.8) 20%, 
+		rgba(0, 0, 0, 0.8) 80%, 
+		rgba(0, 0, 0, 0.3));
 	transition: all 2s ease 0s;
-	font-size: 0.85vw;
 }
 .story_3 {
-	position: absolute;
 	max-width: 75%;
+	position: absolute;
 	top: 50%;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
-    background: rgb(0, 0, 0, 0.65);
     opacity: 0;
+    background: linear-gradient(to right, 
+    	rgba(0, 0, 0, 0.3), 
+    	rgba(0, 0, 0, 0.8) 20%, 
+    	rgba(0, 0, 0, 0.8) 80%, 
+    	rgba(0, 0, 0, 0.3));
     transition: all 2s ease 0s;
 }
 .story_3 p {
@@ -449,7 +325,6 @@ main {
 	padding: 10px;
 	margin: 10px;
 }
-/*background: linear-gradient(to right, black 10%, transparent 100%)*/
 .new__life_2 img {
 	max-width: 100%;
 }
@@ -553,11 +428,10 @@ main {
 		flex: 0 0 31.65%;
 	}
 }
-/*РАЗДЕЛ ПОРТФОЛИО*/
+/*PORTFOLIO*/
 .body__portfolio {
 	max-width: 100%;
 	padding: 0px 50px 0px 50px;
-	
 }
 .portfolio {
 	overflow: hidden;
@@ -569,11 +443,10 @@ main {
 	transition: all 1s ease 0s;
 }
 .slider__item {
-	outline: none;
+	height: 500px;
 	padding: 10px 10px 10px 10px;
 	transition: all 1s ease 0s;
-	text-align: center;
-  	height: 500px;
+  	outline: none;
 }
 .slider__item img {
 	max-width: 1000px;
@@ -614,58 +487,50 @@ main {
 .arrows .next,.next:active,.next:focus {
 	outline: none;
 }
-.disable {
-	pointer-events: none;
-	cursor: none;
-}
-.portfolio__image {
-	
-}
 .portfolio__image img {
 	max-width: 100%;
 	max-height: 600px;
 }
 @media (max-width: 1600px) {
-	
 	.slider__item {
   		height: 400px;
 	}
 	.arrows .prev {
-		background: url('img/sql.png') 0 0 / 65% no-repeat;
+		background: url('img/bck.png') 0 0 / 65% no-repeat;
 	}
 	.arrows .next {
-		background: url('img/sq.png') 0 0 / 65% no-repeat;
+		background: url('img/frwd.png') 0 0 / 65% no-repeat;
 	}
 }
 @media (max-width: 1400px) {
 	.slider__item {
   		height: 300px;
 	}
-	.arrows .prev {
-		background: url('img/sql.png') 0 0 / 60% no-repeat;
-	}
-	.arrows .next {
-		background: url('img/sq.png') 0 0 / 60% no-repeat;
-	}
 	.arrows {
 		max-height: 80px;
+	}
+	.arrows .prev {
+		background: url('img/bck.png') 0 0 / 60% no-repeat;
+	}
+	.arrows .next {
+		background: url('img/frwd.png') 0 0 / 60% no-repeat;
 	}
 }
 @media (max-width: 1200px) {
 	.slider__item {
   		height: 250px;
 	}
-	.arrows .prev {
-		background: url('img/sql.png') 0 0 / 45% no-repeat;
-	}
-	.arrows .next {
-		background: url('img/sq.png') 0 0 / 45% no-repeat;
-	}
 	.arrows {
 		max-height: 60px;
 	}
+	.arrows .prev {
+		background: url('img/bck.png') 0 0 / 45% no-repeat;
+	}
+	.arrows .next {
+		background: url('img/frwd.png') 0 0 / 45% no-repeat;
+	}
 }
-/*РАЗДЕЛ БЛОГ*/
+/*BLOG*/
 .container__blog {
 	max-width: 1700px;
 	display: flex;
@@ -675,15 +540,16 @@ main {
 	overflow: hidden;
 }
 .blog {
-	width: 400px;
-	margin: 40px 40px 40px 40px;
-	padding: 20px 20px 20px 20px;
-	border: 1px solid #999;
-	border-radius: 10px;
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
 	justify-content: space-around;
+	width: 25%;
+	margin: 40px 40px 40px 40px;
+	padding: 20px 20px 20px 20px;
+	border: 1px solid #999;
+	border-radius: 10px;
+	font-size: 0.95vw;
 	color: white;
 	background: url('img/code8.jpg') 0 0 / cover no-repeat;
 }
@@ -696,13 +562,13 @@ main {
 	color: white;
 }
 .read__post a button {
-	width: 100px;
+	width: 30%;
 	border: 0;
   	border-radius: 5px;
   	background: #008000;
   	color: #fff;
   	padding: 8px 16px;
-  	font-size: 16px;
+  	font-size: 0.95vw;
   	transform: scale(1);
   	transition: all 1s ease 0s;
 }
@@ -714,20 +580,23 @@ main {
 	overflow: hidden;
 }
 .post {
-	margin: 40px 40px 40px 40px;
-	padding: 20px 20px 20px 20px;
-	border: 1px solid #999;
-	border-radius: 10px;
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
 	justify-content: space-around;
+	margin: 40px 40px 40px 40px;
+	padding: 20px 20px 20px 20px;
+	border: 1px solid #999;
+	border-radius: 10px;
 	color: white;
 	font-family: 'Montserrat', sans-serif;
-	background: url('img/code8.jpg') 0 0 / 100% no-repeat;
+	background: url('img/code8.jpg') 0 0 / 100% no-repeat, rgba(0, 0, 0, 0.8);
 	transform: translateX(1500px);
 	transition: all 1s ease 0s;
-	
+}
+.post_1 {
+	padding: 10px 10px 10px 10px;
+	background: rgba(0, 0, 0, 0.6);
 }
 .container__blog .blog:nth-child(1) {
 	transform: translateY(-1500px);
@@ -741,7 +610,7 @@ main {
 	transform: translateX(1500px);
 	transition: all 1s ease 0s;
 }
-/*РАЗДЕЛ КОНТАКТЫ*/
+/*CONTACTS*/
 .background {
 	width: 100%;
 	height: 100%;
@@ -754,37 +623,20 @@ main {
 	background: url('img/left.jpg') 0 0 / cover no-repeat;
 	transform: translateX(1500px);
 	transition: all 1s ease 0s;
-	
 }
 .background_4 {
 	background: url('img/right.jpg') 0 0 / cover no-repeat;
-	
-	
 	transform: translateX(-1500px);
 	transition: all 1s ease 0s;
-	
 }
-/*.background_4 img {
-	width: 100%;
-	max-height: 100%;
-}
-.background_3 img {
-	width: 100%;
-	max-height: 100%;
-}*/
-/*.background_2 {
-	background: url('img/img5.jpg') 0 0 / cover no-repeat;
-
-}*/
 .contacts {
-	width: 100%;
-	height: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+	width: 100%;
+	height: 100%;
 	overflow: hidden;
-	
 }
 .contacts_2 {
 	font-family: 'Montserrat', sans-serif;
@@ -810,11 +662,10 @@ main {
 	transform: translateX(-1500px);
 	transition: all 1s ease 0s;
 }
-/*РАЗДЕЛ ЗАГРУЗКА ФОТО  И ВИДЕО В ПОРТФОЛИО И СОЗДАНИЕ ЗАПИСЕЙ В БЛОГЕ*/
+/*UPLOAD FOTO IN PORTFOLIO, CREATE POST IN BLOG, UPDATE POST IN BLOG*/
 .form__container {
-	max-width: 400px;
+	max-width: 40%;
 	width: 100%;
-
 }
 .upload__form {
     display: flex;
@@ -824,8 +675,8 @@ main {
 .title__style {
 	border: 1px solid #ccc; 
     border-radius: 5px;
-    height: 50px;
     width: 100%;
+    height: 50px;
     margin: 40px 40px 40px 0;
 }
 .body__style {
@@ -834,15 +685,15 @@ main {
 .post__title__style {
 	border: 1px solid #ccc; 
     border-radius: 5px;
-    height: 25px;
     width: 100%;
+    height: 25px;
     margin: 40px 40px 40px 0;
 }
 .post__body__style {
 	border: 1px solid #ccc; 
     border-radius: 5px;
-    height: 100px;
     width: 100%;
+    height: 100px;
     margin: 40px 40px 40px 0;
 }
 .upload__form button {
@@ -869,7 +720,7 @@ main {
 	outline: none;
   	box-shadow: 0 0 0 4px #cbd6ee;
 }
-/*РАЗДЕЛ ПАНЕЛЬ АДМИНИСТРАТОРА*/
+/*ADMIN PANEL*/
 .admin__panel {
 	display: flex;
 	flex-direction: column;
@@ -960,9 +811,9 @@ main {
 	outline: none;
   	box-shadow: 0 0 0 4px #cbd6ee;
 }
-/*РАЗДЕЛ СТРАНИЦА УДАЛЕНИЯ ФОТО И ВИДЕО*/
+/*DELETE FOTOS AND POSTS*/
 .delete__form {
-    font-family: Avenir, sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 .delete__form .button__cancel button {
 	margin-top: 60px;
@@ -975,10 +826,6 @@ main {
 }
 .delete__form .button__cancel button:hover {
 	opacity: 0.6;
-}
-.delete__form .button__cancel button:focus {
-	outline: none;
-  	box-shadow: 0 0 0 4px #cbd6ee;
 }
 .delete__form button {
 	width: 100px;
@@ -993,22 +840,11 @@ main {
 .delete__form button:hover {
 	opacity: 0.6;
 }
-.delete__form button:focus {
-	outline: none;
-  	box-shadow: 0 0 0 4px #cbd6ee;
-}
-/*РАЗДЕЛ КОНТАКТЫ(ФУТЕР)*/
-.container__footer {
-	max-width: 1200px;
-	margin: 0px auto;
-	padding: 0px 160px;
-}
+/*FOOTER*/
 .footer {
 	flex: 0 0 auto;
-
 	overflow: hidden;
 }
-
 .footer img {
 	padding: 0px 15px 25px 0px;
 	transform: translateY(1500px);
@@ -1019,9 +855,6 @@ main {
 	outline: none;
 	transform: translateX(-1500px);
 	transition: all 1s ease;
-}
-.footer__link {
-	
 }
 .footer__link:hover img {
 	transform: translateY(-5px);

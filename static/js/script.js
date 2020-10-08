@@ -1,14 +1,6 @@
-// Burger menu settings
-var headerBurger = document.querySelector('.header__burger');
-var headerMenu = document.querySelector('.header__menu');
-var body = document.querySelector('body');
-
-headerBurger.addEventListener('click', function() {
-	headerBurger.classList.toggle('active');
-	headerMenu.classList.toggle('active');
-	body.classList.toggle('lock');
-});
 // Main settings
+var body = document.querySelector('body');
+var headerMenu = document.querySelector('.header__menu');
 var headerName = body.querySelector('.header__name');
 var header = body.querySelector('.header');
 var links = body.querySelectorAll('.link');
@@ -21,7 +13,6 @@ var backFourth = footer.querySelector('.back__fourth');
 var footerLinks = footer.querySelectorAll('.footer__link');
 var footerImgs = footer.querySelectorAll('img');
 var allFooterLinks = footer.querySelectorAll('a');
-
 function settings() {
 	function background(element) {
 		element.style.background = 'white center / cover no-repeat';
@@ -143,7 +134,7 @@ function show() {
 		var blog = body.querySelector('.container__blog');
 		var posts = blog.querySelectorAll('.blog');
 		transformTwo(posts);
-	} else if (window.location.href.indexOf('blog/post') > -1 && !window.location.href.endsWith('create') && !window.location.href.endsWith('update')) {
+	} else if (window.location.href.indexOf('blog/post') > -1 && !window.location.href.endsWith('create') && !window.location.href.endsWith('update') && !window.location.href.endsWith('delete')) {
 		var post = body.querySelector('.post');
 		transformOne(post);
 	};
