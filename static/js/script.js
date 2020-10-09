@@ -1,18 +1,19 @@
 // Main settings
-var body = document.querySelector('body');
-var headerMenu = document.querySelector('.header__menu');
-var headerName = body.querySelector('.header__name');
-var header = body.querySelector('.header');
-var links = body.querySelectorAll('.link');
-var footer = body.querySelector('.footer');
-var backgroundContacts = body.querySelector('.background');
-var backFirst = footer.querySelector('.back__first');
-var backSecond = footer.querySelector('.back__second');
-var backThird = footer.querySelector('.back__third');
-var backFourth = footer.querySelector('.back__fourth');
-var footerLinks = footer.querySelectorAll('.footer__link');
-var footerImgs = footer.querySelectorAll('img');
-var allFooterLinks = footer.querySelectorAll('a');
+"use strict";
+let body = document.querySelector('body');
+let headerMenu = document.querySelector('.header__menu');
+let headerName = body.querySelector('.header__name');
+let header = body.querySelector('.header');
+let links = body.querySelectorAll('.link');
+let footer = body.querySelector('.footer');
+let backgroundContacts = body.querySelector('.background');
+let backFirst = footer.querySelector('.back__first');
+let backSecond = footer.querySelector('.back__second');
+let backThird = footer.querySelector('.back__third');
+let backFourth = footer.querySelector('.back__fourth');
+let footerLinks = footer.querySelectorAll('.footer__link');
+let footerImgs = footer.querySelectorAll('img');
+let allFooterLinks = footer.querySelectorAll('a');
 function settings() {
 	function background(element) {
 		element.style.background = 'white center / cover no-repeat';
@@ -82,25 +83,25 @@ function show() {
 	// Portfolio slider
 	if (window.location.href.endsWith('portfolio/')) {
 		let row = 0;
-		var mainSlider = body.querySelector('.slider');
-		var sliderItems = body.querySelectorAll('.slider__item');
-		var arrows = body.querySelector('.arrows');
-		var previous = arrows.querySelector('.prev');
-		var next = arrows.querySelector('.next');
-		var container = body.querySelector('.portfolio');
-		var itemWidth = container.clientWidth;
-		var constant = 3;
-		var widthOfImages = [];
-		var totalWidthOfImages = 0;
+		let mainSlider = body.querySelector('.slider');
+		let sliderItems = body.querySelectorAll('.slider__item');
+		let arrows = body.querySelector('.arrows');
+		let previous = arrows.querySelector('.prev');
+		let next = arrows.querySelector('.next');
+		let container = body.querySelector('.portfolio');
+		let itemWidth = container.clientWidth;
+		let constant = 3;
+		let widthOfImages = [];
+		let totalWidthOfImages = 0;
 		sliderItems.forEach(sliderItem => widthOfImages.push(sliderItem.clientWidth));
 		widthOfImages.forEach(i => totalWidthOfImages += i);
-		var movePosition = () => {
+		let movePosition = () => {
 			return Math.round(itemWidth / constant);
 		};
-		var position = () => {
+		let position = () => {
 			mainSlider.style.transform = `translateX(${row}px)`;
 		};
-		var disableArrows = () => {
+		let disableArrows = () => {
 			previous.disabled = row === 0;
 			next.disabled = row <= -(totalWidthOfImages - itemWidth);
 		};
@@ -131,27 +132,27 @@ function show() {
 		transformTwo(allFooterLinks);
 	};
 	if (window.location.href.endsWith('blog/')) {
-		var blog = body.querySelector('.container__blog');
-		var posts = blog.querySelectorAll('.blog');
+		let blog = body.querySelector('.container__blog');
+		let posts = blog.querySelectorAll('.blog');
 		transformTwo(posts);
 	} else if (window.location.href.indexOf('blog/post') > -1 && !window.location.href.endsWith('create') && !window.location.href.endsWith('update') && !window.location.href.endsWith('delete')) {
-		var post = body.querySelector('.post');
+		let post = body.querySelector('.post');
 		transformOne(post);
 	};
-	var preloader = body.querySelector('.preloader');
+	let preloader = body.querySelector('.preloader');
 	preloader.style.display = 'none';
 	if (window.location.href.indexOf('contacts') > -1) {
-		var backgroundThree = body.querySelector('.background_3');
-		var backgroundFour = body.querySelector('.background_4');
-		var paragraphs = body.querySelectorAll('p');
+		let backgroundThree = body.querySelector('.background_3');
+		let backgroundFour = body.querySelector('.background_4');
+		let paragraphs = body.querySelectorAll('p');
 		transformOne(backgroundThree);
 		transformOne(backgroundFour);
 		transformTwo(paragraphs);
 		transformTwo(allFooterLinks);
 	} else if (window.location.href.endsWith('')) {
-		var lastLife = body.querySelector('.last__life');
-		var newLife1 = body.querySelector('.new__life_1');
-		var newLife2 = body.querySelector('.new__life_2');
+		let lastLife = body.querySelector('.last__life');
+		let newLife1 = body.querySelector('.new__life_1');
+		let newLife2 = body.querySelector('.new__life_2');
 		transformOne(lastLife);
 		transformOne(newLife1);
 		transformOne(newLife2);
