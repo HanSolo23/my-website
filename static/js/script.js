@@ -15,13 +15,13 @@ let footerLinks = footer.querySelectorAll('.footer__link');
 let footerImgs = footer.querySelectorAll('img');
 let allFooterLinks = footer.querySelectorAll('a');
 function settings() {
-	function background(element) {
+	function changeBackgroundToWhite(element) {
 		element.style.background = 'white center / cover no-repeat';
 	};
-	function backgroundBlack(element) {
+	function changeBackgroundToBlack(element) {
 		element.style.background = 'black center / cover no-repeat';
 	};
-	function color(element) {
+	function changeColor(element) {
 		element.style.color = 'black';
 	};
 	function displayNone(element) {
@@ -37,13 +37,13 @@ function settings() {
 		displayNone(header);
 		displayBlock(backFirst);
 		displaysNone(footerLinks);
-		backgroundBlack(body);
+		changeBackgroundToBlack(body);
 		footer.style.padding = '0px 50px 0px 50px';
 	} else if (window.location.href.indexOf('blog') > -1) {
 		displayNone(header);
 		displayBlock(backFirst);
 		displaysNone(footerLinks);
-		backgroundBlack(body);
+		changeBackgroundToBlack(body);
 	} else if (window.location.href.indexOf('contacts') > -1) {
 		displayNone(header);
 		displayBlock(backFirst);
@@ -60,21 +60,21 @@ function settings() {
 		displayBlock(backThird);
 	};
 	if (window.location.href.indexOf('upload') > -1) {
-		background(body);
-		color(backSecond);
+		changeBackgroundToWhite(body);
+		changeColor(backSecond);
 	} else if (window.location.href.indexOf('delete') > -1) {
-		background(body);
+		changeBackgroundToWhite(body);
 		displayNone(backSecond);
 	} else if (window.location.href.indexOf('update') > -1) {
-		background(body);
+		changeBackgroundToWhite(body);
 		displayNone(backThird);
 		displayBlock(backFourth);
-		color(backFourth);
+		changeColor(backFourth);
 	} else if (window.location.href.indexOf('post/create') > -1) {
-		background(body);
+		changeBackgroundToWhite(body);
 		displayNone(backFirst);
 		displayBlock(backThird);
-		color(backThird);
+		changeColor(backThird);
 	}; 
 };
 settings()
@@ -98,7 +98,7 @@ function show() {
 		let movePosition = () => {
 			return Math.round(itemWidth / constant);
 		};
-		let position = () => {
+		let changePosition = () => {
 			mainSlider.style.transform = `translateX(${row}px)`;
 		};
 		let disableArrows = () => {
@@ -107,12 +107,12 @@ function show() {
 		};
 		next.addEventListener('click', () => {
 			row -= movePosition();
-			position();
+			changePosition();
 			disableArrows();
 		});
 		previous.addEventListener('click', () => {
 			row += movePosition();
-			position();
+			changePosition();
 			disableArrows();
 		});
 		disableArrows();
