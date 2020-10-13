@@ -659,7 +659,7 @@ main {
 	}
 }
 /*CONTACTS*/
-.background {
+.backgroundForContacts {
 	width: 100%;
 	height: 100%;
 	position: absolute;
@@ -667,12 +667,12 @@ main {
 	display: none;
    	grid-template-columns: repeat(2, 1fr);
 }
-.background_3 {
+.first__part {
 	background: url('img/left.jpg') 0 0 / cover no-repeat;
 	transform: translateX(1500px);
 	transition: all 1s ease 0s;
 }
-.background_4 {
+.second__part {
 	background: url('img/right.jpg') 0 0 / cover no-repeat;
 	transform: translateX(-1500px);
 	transition: all 1s ease 0s;
