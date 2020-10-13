@@ -650,6 +650,10 @@ main {
 	transform: translateX(1500px);
 	transition: all 1s ease 0s;
 }
+.container__blog .blog:nth-child(4) {
+	transform: translateY(1500px);
+	transition: all 1s ease 0s;
+}
 @media (min-width: 2000px) {
 	.container__blog {
 		max-width: 5000px;
