@@ -122,8 +122,9 @@ function show() {
 	let widthOfImages = [];
 	let sumOfWidthOfImages = 0;
 
-	cssProperties.sliderItems.forEach(sliderItem => widthOfImages.push( sliderItem.clientWidth) );
+	cssProperties.sliderItems.forEach(sliderItem => widthOfImages.push(sliderItem.clientWidth));
 	widthOfImages.forEach(i => sumOfWidthOfImages += i);
+	
 	if (cssProperties.nextArrow != undefined && cssProperties.previousArrow != undefined) {
 		cssProperties.nextArrow.addEventListener('click', () => {
 			row -= calcMovementDistance();
@@ -158,7 +159,7 @@ function show() {
 
 	cssProperties.preloader.style.display = 'none';
 
-	// Main page animations
+	// Animations of main page
 	moveOneElement(cssProperties.headerName);
 	moveOneElement(cssProperties.headerMenu);
 	moveOneElement(cssProperties.lastLife);
@@ -166,17 +167,17 @@ function show() {
 	moveOneElement(cssProperties.newLife2);
 	moveManyElements(cssProperties.allFooterLinks);
 	moveManyElements(cssProperties.footerImgs);
-	// Portfolio page animations
+	// Animations of portfolio page
 	moveOneElement(cssProperties.containerOfSlider);
 	moveOneElement(sliderArrows);
-	// Blog page animations
+	// Animations of blog page
 	moveManyElements(cssProperties.posts);
 	moveOneElement(cssProperties.post);
-	// Contacts page animations
+	// Animations of contacts page
 	moveOneElement(cssProperties.firstPartOfContactsBackground);
 	moveOneElement(cssProperties.secondPartOfContactsBackground);
 	moveManyElements(cssProperties.linesWithContacts);
-	
+
 	function moveOneElement(element) {
 		if (element != null) {
 			element.style.transform = 'translate(0px, 0px)';
@@ -188,4 +189,38 @@ function show() {
 			elements.forEach(element => element.style.transform = 'translate(0px, 0px)');
 		};
 	};
+};
+
+/*Animations of buttons in footer and header was realized by pseudo-class hover, 
+but some of them was broken by move animations and pseudo-class hover doesn't work.
+So this animations are working with mouseover and mouseout*/
+
+animationOfButton(cssProperties.backFirst);
+animationOfButton(cssProperties.backSecond);
+animationOfButton(cssProperties.backThird);
+animationOfButton(cssProperties.backFourth);
+animationOfButton(cssProperties.headerName);
+animationOfButtons(cssProperties.footerImgs);
+
+function animationOfButton(element) {
+	element.addEventListener("mouseover" , function(event) {
+		event.target.style.transform = 'scale(1.05)';
+		event.target.style.transition = 'all 1s ease';
+	});
+	element.addEventListener("mouseout" , function(event) {
+		event.target.style.transform = 'scale(1)';
+		event.target.style.transition = 'all 1s ease';
+	});
+};
+function animationOfButtons(elements) {
+	elements.forEach(element => {
+		element.addEventListener("mouseover" , function(event) {
+			event.target.style.transform = 'translateY(5px)';
+			event.target.style.transition = 'all 1s ease';
+		});
+		element.addEventListener("mouseout" , function(event) {
+			event.target.style.transform = 'translateY(0px)';
+			event.target.style.transition = 'all 1s ease';
+		});
+	});
 };

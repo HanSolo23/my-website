@@ -192,7 +192,7 @@ main {
 	position: relative;
 	margin-right: 15px;
 	flex: 1 1 50%;
-	transform: scale(1) translateX(-1500px);
+	transform: translateX(-1500px);
 	transition: all 1s ease 0s;
 }
 .last__life img {
@@ -246,7 +246,7 @@ main {
 .new__life_1 {
 	position: relative;
 	margin-bottom: 15px;
-	transform: scale(1) translateY(-1500px);
+	transform: translateY(-1500px);
 	transition: all 1s ease 0s;
 }
 .text_2 {
@@ -294,7 +294,7 @@ main {
 }
 .new__life_2 {
 	position: relative;
-	transform: scale(1) translateY(1500px);
+	transform: translateY(1500px);
 	transition: all 1s ease 0s;
 }
 .text_3 {
@@ -920,13 +920,8 @@ main {
 	outline: none;
 	color: white;
 	font-family: 'Montserrat', sans-serif;
-	transform: scale(1);
-	transition: all 1s ease;
 }
-.back__first:hover {
-	transform: scale(1.05);
-	transition: all 1s ease;
-}
+
 .back__second {
 	margin: 0px 0px 61px 0px;
 	display: none;
@@ -934,13 +929,8 @@ main {
 	outline: none;
 	color: white;
 	font-family: 'Montserrat', sans-serif;
-	transform: scale(1);
-	transition: all 1s ease;
 }
-.back__second:hover {
-	transform: scale(1.05);
-	transition: all 1s ease;
-}
+
 .back__third {
 	margin: 0px 0px 61px 0px;
 	display: none;
@@ -948,13 +938,8 @@ main {
 	outline: none;
 	color: white;
 	font-family: 'Montserrat', sans-serif;
-	transform: scale(1);
-	transition: all 1s ease;
 }
-.back__third:hover {
-	transform: scale(1.05);
-	transition: all 1s ease;
-}
+
 .back__fourth {
 	margin: 0px 0px 61px 0px;
 	display: none;
@@ -962,13 +947,8 @@ main {
 	outline: none;
 	color: white;
 	font-family: 'Montserrat', sans-serif;
-	transform: scale(1);
-	transition: all 1s ease;
 }
-.back__fourth:hover {
-	transform: scale(1.05);
-	transition: all 1s ease;
-}
+
 @media (min-width: 2000px) {
 	.footer {
 		font-size: 25px;
