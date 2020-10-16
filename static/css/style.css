@@ -472,6 +472,7 @@ main {
 .body__portfolio {
 	max-width: 100%;
 	padding: 0px 50px 0px 50px;
+	overflow: hidden;
 }
 .portfolio {
 	overflow: hidden;

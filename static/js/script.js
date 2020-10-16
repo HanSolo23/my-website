@@ -1,68 +1,86 @@
 // Main settings
-
 "use strict";
+
 let body = document.querySelector('body');
 let header = body.querySelector('.header');
-let headerMenu = header.querySelector('.header__menu');
-let headerName = header.querySelector('.header__name');
-let links = header.querySelectorAll('.link');
 let footer = body.querySelector('.footer');
 let backgroundContacts = body.querySelector('.backgroundForContacts');
-let backFirst = footer.querySelector('.back__first');
-let backSecond = footer.querySelector('.back__second');
-let backThird = footer.querySelector('.back__third');
-let backFourth = footer.querySelector('.back__fourth');
-let footerLinks = footer.querySelectorAll('.footer__link');
-let footerImgs = footer.querySelectorAll('img');
-let allFooterLinks = footer.querySelectorAll('a');
+let sliderArrows = body.querySelector('.arrows');
+let blog = body.querySelector('.container__blog');
+
+let cssProperties = {
+	preloader: body.querySelector('.preloader'),
+	headerMenu: header.querySelector('.header__menu'),
+	headerName: header.querySelector('.header__name'),
+	backFirst: footer.querySelector('.back__first'),
+	backSecond: footer.querySelector('.back__second'),
+	backThird: footer.querySelector('.back__third'),
+	backFourth: footer.querySelector('.back__fourth'),
+	footerLinks: footer.querySelectorAll('.footer__link'),
+	footerImgs: footer.querySelectorAll('img'),
+	allFooterLinks: footer.querySelectorAll('a'),
+	lastLife: body.querySelector('.last__life'),
+	newLife1: body.querySelector('.new__life_1'),
+	newLife2: body.querySelector('.new__life_2'),
+	mainSlider: body.querySelector('.slider'),
+	sliderItems: body.querySelectorAll('.slider__item'),
+	previousArrow: sliderArrows?.querySelector('.prev'),
+	nextArrow: sliderArrows?.querySelector('.next'),
+	containerOfSlider: body.querySelector('.portfolio'),
+	posts: blog?.querySelectorAll('.blog'),
+	post: body.querySelector('.post'),
+	firstPartOfContactsBackground: backgroundContacts.querySelector('.first__part'),
+	secondPartOfContactsBackground: backgroundContacts.querySelector('.second__part'),
+	linesWithContacts: body.querySelectorAll('p'),
+};
 
 function settings() {
 	if (window.location.href.indexOf('portfolio') > -1) {
 		displayNone(header);
-		displayBlock(backFirst);
-		displayNoneForFooterLinks(footerLinks);
+		displayBlock(cssProperties.backFirst);
+		displayNoneForFooterLinks(cssProperties.footerLinks);
 		changeBackgroundToBlack(body);
 		footer.style.padding = '0px 50px 0px 50px';
 	} else if (window.location.href.indexOf('blog') > -1) {
 		displayNone(header);
-		displayBlock(backFirst);
-		displayNoneForFooterLinks(footerLinks);
+		displayBlock(cssProperties.backFirst);
+		displayNoneForFooterLinks(cssProperties.footerLinks);
 		changeBackgroundToBlack(body);
 	} else if (window.location.href.indexOf('contacts') > -1) {
 		displayNone(header);
-		displayBlock(backFirst);
-		displayNoneForFooterLinks(footerLinks);
+		displayBlock(cssProperties.backFirst);
+		displayNoneForFooterLinks(cssProperties.footerLinks);
 		body.style.transform = 'scale(1)';
 		backgroundContacts.style.display = 'grid';
-		backFirst.style.color = 'white';
+		cssProperties.backFirst.style.color = 'white';
 	};
 
 	if (!window.location.href.endsWith('portfolio/') && 
 		window.location.href.indexOf('portfolio') > -1) {
-		displayNone(backFirst);
-		displayBlock(backSecond);
+		displayNone(cssProperties.backFirst);
+		displayBlock(cssProperties.backSecond);
 	} else if (!window.location.href.endsWith('post/') && 
 		window.location.href.indexOf('post') > -1) {
-		displayNone(backFirst);
-		displayBlock(backThird);
+		displayNone(cssProperties.backFirst);
+		displayBlock(cssProperties.backThird);
 	};
 
 	if (window.location.href.indexOf('upload') > -1) {
 		changeBackgroundToWhite(body);
-		changeColor(backSecond);
+		changeColor(cssProperties.backSecond);
 	} else if (window.location.href.indexOf('delete') > -1) {
 		changeBackgroundToWhite(body);
-		displayNone(backSecond);
+		displayNone(cssProperties.backSecond);
 	} else if (window.location.href.indexOf('update') > -1) {
 		changeBackgroundToWhite(body);
-		displayNone(backThird);
-		displayBlock(backFourth);
-		changeColor(backFourth);
+		displayNone(cssProperties.backThird);
+		displayBlock(cssProperties.backFourth);
+		changeColor(cssProperties.backFourth);
 	} else if (window.location.href.indexOf('post/create') > -1) {
 		changeBackgroundToWhite(body);
-		displayNone(backFirst);
-		displayBlock(backThird);
-		changeColor(backThird);
+		displayNone(cssProperties.backFirst);
+		displayBlock(cssProperties.backThird);
+		changeColor(cssProperties.backThird);
 	}; 
 
 	function changeBackgroundToWhite(element) {
@@ -95,105 +113,79 @@ settings()
 window.onload = show;
 
 function show() {
-	// Portfolio slider
+	/*Portfolio slider must be in show(), 
+	because widths of images are incorrect if page don't load completely.*/
 
-	if (window.location.href.endsWith('portfolio/')) {
-		let row = 0;
-		let mainSlider = body.querySelector('.slider');
-		let sliderItems = body.querySelectorAll('.slider__item');
-		let sliderArrows = body.querySelector('.arrows');
-		let previousArrow = sliderArrows.querySelector('.prev');
-		let nextArrow = sliderArrows.querySelector('.next');
-		let containerOfSlider = body.querySelector('.portfolio');
-		let itemWidth = containerOfSlider.clientWidth;
-		let constant = 3;
+	let row = 0;
+	let itemWidth = cssProperties.containerOfSlider?.clientWidth;
+	let constant = 3;
+	let widthOfImages = [];
+	let sumOfWidthOfImages = 0;
 
-		let widthOfImages = [];
-		let sumOfWidthOfImages = 0;
-
-		sliderItems.forEach(sliderItem => widthOfImages.push(sliderItem.clientWidth));
-
-		widthOfImages.forEach(i => sumOfWidthOfImages += i);
-
-		nextArrow.addEventListener('click', () => {
+	cssProperties.sliderItems.forEach(sliderItem => widthOfImages.push( sliderItem.clientWidth) );
+	widthOfImages.forEach(i => sumOfWidthOfImages += i);
+	if (cssProperties.nextArrow != undefined && cssProperties.previousArrow != undefined) {
+		cssProperties.nextArrow.addEventListener('click', () => {
 			row -= calcMovementDistance();
 			movePosition();
 			disableArrows();
 		});
 
-		previousArrow.addEventListener('click', () => {
+		cssProperties.previousArrow.addEventListener('click', () => {
 			row += calcMovementDistance();
 			movePosition();
 			disableArrows();
 		});
-
-		function calcMovementDistance() {
-			return Math.round(itemWidth / constant);
-		};
-
-		function movePosition() {
-			mainSlider.style.transform = `translateX(${row}px)`;
-		};
-
 		function disableArrows() {
-			previousArrow.disabled = row === 0;
-			nextArrow.disabled = row <= -(sumOfWidthOfImages - itemWidth);
+			cssProperties.previousArrow.disabled = row === 0;
+			cssProperties.nextArrow.disabled = row <= -(sumOfWidthOfImages - itemWidth);
 		};
 
 		disableArrows();
-
-	//Settings of animations
-
-		containerOfSlider.style.transform = 'translateX(0px)';
-		sliderArrows.style.transform = 'translateY(0px)';
 	};
 
-	let preloader = body.querySelector('.preloader');
-	preloader.style.display = 'none';
-
-	if (window.location.href.indexOf('portfolio') > -1) {
-		moveManyElements(allFooterLinks);
-	} else if (window.location.href.indexOf('blog') > -1) {
-		moveManyElements(allFooterLinks);
+	function calcMovementDistance() {
+		return Math.round(itemWidth / constant);
 	};
 
-	if (window.location.href.endsWith('blog/')) {
-		let blog = body.querySelector('.container__blog');
-		let posts = blog.querySelectorAll('.blog');
-		moveManyElements(posts);
-	} else if (window.location.href.indexOf('blog/post') > -1 && 
-		!window.location.href.endsWith('create') && 
-		!window.location.href.endsWith('update') && 
-		!window.location.href.endsWith('delete')) {
-		let post = body.querySelector('.post');
-		moveOneElement(post);
+	function movePosition() {
+		cssProperties.mainSlider.style.transform = `translateX(${row}px)`;
 	};
 
-	if (window.location.href.indexOf('contacts') > -1) {
-		let firstPartOfContactsBackground = body.querySelector('.first__part');
-		let secondPartOfContactsBackground = body.querySelector('.second__part');
-		let linesWithContacts = body.querySelectorAll('p');
-		moveOneElement(firstPartOfContactsBackground);
-		moveOneElement(secondPartOfContactsBackground);
-		moveManyElements(linesWithContacts);
-		moveManyElements(allFooterLinks);
-	} else if (window.location.href.endsWith('')) {
-		let lastLife = body.querySelector('.last__life');
-		let newLife1 = body.querySelector('.new__life_1');
-		let newLife2 = body.querySelector('.new__life_2');
-		moveOneElement(lastLife);
-		moveOneElement(newLife1);
-		moveOneElement(newLife2);
-		moveOneElement(headerName);
-		moveOneElement(headerMenu);
-		moveManyElements(footerImgs);
-	};
+	/*Settings of animations. 
+	Code for animations must be in show(), because it doesn't work 
+	if page don't load completely.*/
 
+	cssProperties.preloader.style.display = 'none';
+
+	// Main page animations
+	moveOneElement(cssProperties.headerName);
+	moveOneElement(cssProperties.headerMenu);
+	moveOneElement(cssProperties.lastLife);
+	moveOneElement(cssProperties.newLife1);
+	moveOneElement(cssProperties.newLife2);
+	moveManyElements(cssProperties.allFooterLinks);
+	moveManyElements(cssProperties.footerImgs);
+	// Portfolio page animations
+	moveOneElement(cssProperties.containerOfSlider);
+	moveOneElement(sliderArrows);
+	// Blog page animations
+	moveManyElements(cssProperties.posts);
+	moveOneElement(cssProperties.post);
+	// Contacts page animations
+	moveOneElement(cssProperties.firstPartOfContactsBackground);
+	moveOneElement(cssProperties.secondPartOfContactsBackground);
+	moveManyElements(cssProperties.linesWithContacts);
+	
 	function moveOneElement(element) {
-			element.style.transform = 'scale(1) translate(0px, 0px)';
+		if (element != null) {
+			element.style.transform = 'translate(0px, 0px)';
+		};
 	};
 
 	function moveManyElements(elements) {
-			elements.forEach(element => element.style.transform = 'translate(0px, 0px)');;
+		if (elements != undefined) {
+			elements.forEach(element => element.style.transform = 'translate(0px, 0px)');
+		};
 	};
 };
